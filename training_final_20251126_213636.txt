@@ -1,0 +1,657 @@
+============================================================
+当前配置
+============================================================
+环境: BipedalWalker-v3
+种群大小: 150
+训练代数: 300
+变异率: 0.2
+交叉率: 0.8
+精英比例: 0.02
+神经网络结构: 输入 → 128 → 64 → 32 → 输出
+每集最大步数: 1000
+============================================================
+
+开始时间: 2025-11-26 21:36:37
+视频保存频率: 每 50 代
+
+初始化环境...
+/opt/anaconda3/envs/ga-humanoid/lib/python3.10/site-packages/pygame/pkgdata.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_stream, resource_exists
+✓ 成功加载 BipedalWalker-v3
+观察空间: 24维, 动作空间: 4维
+
+网络参数数量: 13668
+
+使用标准遗传算法（固定高变异率：0.2）
+============================================================
+开始训练（无实时渲染，速度更快）
+============================================================
+
+
+[Gen 1/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... NEW RECORD! Best: -10.85, Mean: -93.01, Std: 10.51 | Recording video... /opt/anaconda3/envs/ga-humanoid/lib/python3.10/site-packages/gymnasium/wrappers/rendering.py:293: UserWarning: [33mWARN: Overwriting existing videos at /Users/cq123222/Desktop/25-26 Fall/生命科学导论/GA/videos/gen_001 folder (try specifying a different `video_folder` for the `RecordVideo` wrapper if this is not desired)[0m
+  logger.warn(
+OK (reward: -10.8, steps: 1000) | Time: 8.3s
+
+[Gen 2/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... NEW RECORD! Best: -9.58, Mean: -88.05, Std: 31.75 | Time: 8.9s
+
+[Gen 3/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.81, Mean: -96.56, Std: 27.43 | Time: 8.5s
+
+[Gen 4/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... NEW RECORD! Best: -5.52, Mean: -98.91, Std: 24.24 | Time: 7.8s
+
+[Gen 5/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.39, Mean: -99.55, Std: 24.63 | Time: 8.9s
+
+[Gen 6/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.42, Mean: -104.98, Std: 24.49 | Time: 8.5s
+
+[Gen 7/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.69, Mean: -98.94, Std: 25.84 | Time: 9.4s
+
+[Gen 8/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.70, Mean: -100.05, Std: 25.55 | Time: 8.7s
+
+[Gen 9/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.81, Mean: -105.23, Std: 21.93 | Time: 6.4s
+
+[Gen 10/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.68, Mean: -101.93, Std: 21.82 | Time: 8.6s
+
+[Gen 11/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.84, Mean: -102.35, Std: 26.79 | Time: 8.2s
+
+[Gen 12/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.81, Mean: -100.85, Std: 22.36 | Time: 8.1s
+
+[Gen 13/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.72, Mean: -102.90, Std: 22.70 | Time: 8.1s
+
+[Gen 14/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.75, Mean: -101.95, Std: 23.62 | Time: 7.8s
+
+[Gen 15/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.88, Mean: -98.25, Std: 26.08 | Time: 10.2s
+
+[Gen 16/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.61, Mean: -100.00, Std: 26.17 | Time: 10.4s
+
+[Gen 17/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -7.65, Mean: -98.90, Std: 24.87 | Time: 7.7s
+
+[Gen 18/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.90, Mean: -99.57, Std: 25.22 | Time: 8.3s
+
+[Gen 19/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -7.10, Mean: -102.88, Std: 21.89 | Time: 6.4s
+
+[Gen 20/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.65, Mean: -98.01, Std: 23.40 | Time: 9.0s
+
+[Gen 21/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.84, Mean: -101.61, Std: 22.45 | Time: 7.6s
+
+[Gen 22/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.83, Mean: -102.06, Std: 26.22 | Time: 8.6s
+
+[Gen 23/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.88, Mean: -100.65, Std: 25.09 | Time: 9.4s
+
+[Gen 24/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.73, Mean: -100.91, Std: 22.28 | Time: 9.1s
+
+[Gen 25/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.75, Mean: -104.69, Std: 22.01 | Time: 7.3s
+
+[Gen 26/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.73, Mean: -104.23, Std: 25.39 | Time: 8.9s
+
+[Gen 27/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -11.18, Mean: -101.73, Std: 23.08 | Time: 7.6s
+
+[Gen 28/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -11.08, Mean: -102.14, Std: 23.28 | Time: 7.8s
+
+[Gen 29/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.70, Mean: -102.13, Std: 21.97 | Time: 7.6s
+
+[Gen 30/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -11.17, Mean: -101.45, Std: 25.38 | Time: 7.8s
+
+[Gen 31/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.93, Mean: -101.59, Std: 23.28 | Time: 7.6s
+
+[Gen 32/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.73, Mean: -100.20, Std: 22.63 | Time: 9.7s
+
+[Gen 33/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.97, Mean: -102.99, Std: 26.53 | Time: 8.5s
+
+[Gen 34/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -11.08, Mean: -102.95, Std: 24.09 | Time: 8.7s
+
+[Gen 35/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -11.07, Mean: -101.01, Std: 24.52 | Time: 9.0s
+
+[Gen 36/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -11.01, Mean: -102.16, Std: 21.72 | Time: 8.4s
+
+[Gen 37/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.80, Mean: -102.67, Std: 23.62 | Time: 8.1s
+
+[Gen 38/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.74, Mean: -102.26, Std: 25.45 | Time: 9.0s
+
+[Gen 39/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.72, Mean: -99.83, Std: 25.62 | Time: 9.6s
+
+[Gen 40/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -11.07, Mean: -104.19, Std: 24.87 | Time: 7.6s
+
+[Gen 41/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.84, Mean: -103.31, Std: 22.08 | Time: 7.6s
+
+[Gen 42/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.62, Mean: -101.86, Std: 24.15 | Time: 8.0s
+
+[Gen 43/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.78, Mean: -103.93, Std: 24.32 | Time: 7.0s
+
+[Gen 44/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.61, Mean: -100.22, Std: 26.18 | Time: 10.1s
+
+[Gen 45/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.77, Mean: -98.84, Std: 25.08 | Time: 9.4s
+
+[Gen 46/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.80, Mean: -99.93, Std: 24.01 | Time: 9.9s
+
+[Gen 47/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.80, Mean: -98.42, Std: 25.41 | Time: 9.6s
+
+[Gen 48/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.60, Mean: -100.84, Std: 24.17 | Time: 7.3s
+
+[Gen 49/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... NEW RECORD! Best: 5.21, Mean: -100.14, Std: 26.96 | Time: 7.6s
+
+[Gen 50/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 3.57, Mean: -101.83, Std: 24.98 | Recording video... OK (reward: 19.5, steps: 1000) | Saving checkpoint... 模型已保存到 best_model_gen50.npy
+Done | Time: 15.5s
+
+[Gen 51/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -1.32, Mean: -102.03, Std: 22.17 | Time: 7.7s
+
+[Gen 52/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -2.77, Mean: -104.59, Std: 24.94 | Time: 7.3s
+
+[Gen 53/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -7.27, Mean: -102.08, Std: 22.91 | Time: 8.1s
+
+[Gen 54/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... NEW RECORD! Best: 11.28, Mean: -105.06, Std: 22.89 | Time: 7.2s
+
+[Gen 55/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 4.96, Mean: -105.28, Std: 22.99 | Time: 9.2s
+
+[Gen 56/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.67, Mean: -102.60, Std: 24.70 | Time: 10.2s
+
+[Gen 57/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -3.68, Mean: -102.28, Std: 23.03 | Time: 8.3s
+
+[Gen 58/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.81, Mean: -103.95, Std: 25.39 | Time: 9.3s
+
+[Gen 59/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 8.73, Mean: -102.26, Std: 25.56 | Time: 11.1s
+
+[Gen 60/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.60, Mean: -102.15, Std: 25.03 | Time: 9.5s
+
+[Gen 61/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -7.26, Mean: -104.15, Std: 24.26 | Time: 8.4s
+
+[Gen 62/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 1.98, Mean: -99.46, Std: 25.26 | Time: 9.8s
+
+[Gen 63/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -7.29, Mean: -101.97, Std: 22.24 | Time: 8.4s
+
+[Gen 64/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.20, Mean: -103.45, Std: 24.60 | Time: 8.2s
+
+[Gen 65/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -11.17, Mean: -99.46, Std: 23.35 | Time: 9.5s
+
+[Gen 66/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -1.24, Mean: -101.82, Std: 25.81 | Time: 9.2s
+
+[Gen 67/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -1.53, Mean: -102.26, Std: 27.16 | Time: 9.7s
+
+[Gen 68/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 1.27, Mean: -104.28, Std: 23.35 | Time: 9.3s
+
+[Gen 69/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... NEW RECORD! Best: 17.85, Mean: -103.05, Std: 28.07 | Time: 9.7s
+
+[Gen 70/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -4.97, Mean: -101.97, Std: 26.44 | Time: 8.8s
+
+[Gen 71/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... NEW RECORD! Best: 18.36, Mean: -102.46, Std: 24.64 | Time: 8.5s
+
+[Gen 72/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 17.19, Mean: -104.26, Std: 23.15 | Time: 7.6s
+
+[Gen 73/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 15.76, Mean: -100.66, Std: 24.64 | Time: 8.9s
+
+[Gen 74/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 13.73, Mean: -102.68, Std: 24.18 | Time: 7.7s
+
+[Gen 75/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... NEW RECORD! Best: 21.20, Mean: -103.21, Std: 24.38 | Time: 8.1s
+
+[Gen 76/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 12.62, Mean: -103.54, Std: 23.85 | Time: 8.2s
+
+[Gen 77/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 7.87, Mean: -104.44, Std: 24.80 | Time: 9.3s
+
+[Gen 78/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -3.26, Mean: -106.37, Std: 23.73 | Time: 9.0s
+
+[Gen 79/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.75, Mean: -105.38, Std: 22.78 | Time: 9.0s
+
+[Gen 80/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -10.27, Mean: -102.44, Std: 22.82 | Time: 8.8s
+
+[Gen 81/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -3.85, Mean: -101.88, Std: 23.15 | Time: 9.9s
+
+[Gen 82/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 4.46, Mean: -103.02, Std: 24.93 | Time: 8.9s
+
+[Gen 83/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -5.87, Mean: -102.25, Std: 23.72 | Time: 10.4s
+
+[Gen 84/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 11.12, Mean: -103.59, Std: 23.77 | Time: 8.3s
+
+[Gen 85/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 8.35, Mean: -105.70, Std: 23.03 | Time: 7.2s
+
+[Gen 86/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -0.48, Mean: -105.16, Std: 26.86 | Time: 9.0s
+
+[Gen 87/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 2.68, Mean: -105.90, Std: 25.14 | Time: 8.3s
+
+[Gen 88/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -2.57, Mean: -102.06, Std: 27.24 | Time: 9.9s
+
+[Gen 89/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -0.63, Mean: -104.81, Std: 24.41 | Time: 9.6s
+
+[Gen 90/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 0.06, Mean: -102.28, Std: 23.33 | Time: 10.3s
+
+[Gen 91/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 3.25, Mean: -105.95, Std: 25.92 | Time: 9.5s
+
+[Gen 92/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 3.93, Mean: -103.53, Std: 25.04 | Time: 11.3s
+
+[Gen 93/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 15.21, Mean: -104.61, Std: 25.74 | Time: 9.2s
+
+[Gen 94/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 10.94, Mean: -103.32, Std: 24.67 | Time: 10.0s
+
+[Gen 95/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 12.03, Mean: -106.49, Std: 23.87 | Time: 8.2s
+
+[Gen 96/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 1.26, Mean: -106.54, Std: 26.90 | Time: 9.9s
+
+[Gen 97/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 14.13, Mean: -106.53, Std: 26.42 | Time: 8.9s
+
+[Gen 98/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 9.17, Mean: -106.48, Std: 21.57 | Time: 8.5s
+
+[Gen 99/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -1.01, Mean: -103.53, Std: 20.26 | Time: 9.5s
+
+[Gen 100/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 20.28, Mean: -106.27, Std: 24.03 | Recording video... /opt/anaconda3/envs/ga-humanoid/lib/python3.10/site-packages/gymnasium/wrappers/rendering.py:293: UserWarning: [33mWARN: Overwriting existing videos at /Users/cq123222/Desktop/25-26 Fall/生命科学导论/GA/videos/gen_100 folder (try specifying a different `video_folder` for the `RecordVideo` wrapper if this is not desired)[0m
+  logger.warn(
+OK (reward: -4.8, steps: 1000) | Saving checkpoint... 模型已保存到 best_model_gen100.npy
+Done | Time: 16.8s
+
+[Gen 101/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -1.47, Mean: -101.72, Std: 25.57 | Time: 11.0s
+
+[Gen 102/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 9.53, Mean: -103.03, Std: 27.29 | Time: 9.8s
+
+[Gen 103/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 4.64, Mean: -101.28, Std: 23.17 | Time: 9.3s
+
+[Gen 104/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 14.71, Mean: -102.93, Std: 25.57 | Time: 10.0s
+
+[Gen 105/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 16.90, Mean: -102.89, Std: 21.48 | Time: 7.7s
+
+[Gen 106/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 9.80, Mean: -104.01, Std: 25.15 | Time: 8.7s
+
+[Gen 107/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 17.74, Mean: -100.00, Std: 25.40 | Time: 9.6s
+
+[Gen 108/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 11.66, Mean: -104.92, Std: 24.18 | Time: 7.4s
+
+[Gen 109/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -11.26, Mean: -104.58, Std: 22.61 | Time: 8.4s
+
+[Gen 110/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -1.53, Mean: -106.41, Std: 23.49 | Time: 8.9s
+
+[Gen 111/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 4.65, Mean: -103.17, Std: 22.35 | Time: 9.9s
+
+[Gen 112/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -6.03, Mean: -105.33, Std: 23.69 | Time: 10.5s
+
+[Gen 113/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 1.97, Mean: -104.81, Std: 25.63 | Time: 11.0s
+
+[Gen 114/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 12.83, Mean: -105.01, Std: 28.35 | Time: 11.1s
+
+[Gen 115/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 13.84, Mean: -101.95, Std: 28.44 | Time: 11.2s
+
+[Gen 116/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 16.53, Mean: -102.14, Std: 27.12 | Time: 11.1s
+
+[Gen 117/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 6.27, Mean: -102.98, Std: 27.42 | Time: 10.9s
+
+[Gen 118/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 13.02, Mean: -101.50, Std: 28.19 | Time: 11.3s
+
+[Gen 119/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 5.18, Mean: -103.77, Std: 26.98 | Time: 11.5s
+
+[Gen 120/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 7.58, Mean: -101.02, Std: 27.51 | Time: 11.1s
+
+[Gen 121/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 2.00, Mean: -99.52, Std: 25.28 | Time: 12.7s
+
+[Gen 122/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 19.35, Mean: -98.22, Std: 26.24 | Time: 15.0s
+
+[Gen 123/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... NEW RECORD! Best: 21.43, Mean: -101.44, Std: 27.64 | Time: 14.0s
+
+[Gen 124/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 7.15, Mean: -102.44, Std: 25.90 | Time: 12.9s
+
+[Gen 125/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 15.60, Mean: -98.05, Std: 27.08 | Time: 13.8s
+
+[Gen 126/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 13.60, Mean: -104.43, Std: 23.09 | Time: 10.3s
+
+[Gen 127/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 10.73, Mean: -99.96, Std: 28.57 | Time: 13.5s
+
+[Gen 128/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -7.58, Mean: -104.76, Std: 28.27 | Time: 12.8s
+
+[Gen 129/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 6.56, Mean: -104.42, Std: 26.57 | Time: 13.3s
+
+[Gen 130/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 9.26, Mean: -101.86, Std: 27.54 | Time: 13.2s
+
+[Gen 131/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 5.67, Mean: -100.64, Std: 25.55 | Time: 14.3s
+
+[Gen 132/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 3.32, Mean: -97.59, Std: 26.31 | Time: 15.2s
+
+[Gen 133/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 9.25, Mean: -99.62, Std: 27.79 | Time: 15.3s
+
+[Gen 134/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 4.31, Mean: -102.16, Std: 26.94 | Time: 13.6s
+
+[Gen 135/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 8.05, Mean: -98.44, Std: 27.78 | Time: 14.3s
+
+[Gen 136/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 1.40, Mean: -96.29, Std: 29.18 | Time: 17.6s
+
+[Gen 137/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 6.90, Mean: -97.32, Std: 29.02 | Time: 15.2s
+
+[Gen 138/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 8.16, Mean: -100.67, Std: 30.51 | Time: 14.2s
+
+[Gen 139/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 3.28, Mean: -97.96, Std: 30.81 | Time: 14.7s
+
+[Gen 140/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 9.62, Mean: -97.80, Std: 29.76 | Time: 14.3s
+
+[Gen 141/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 8.15, Mean: -100.57, Std: 29.45 | Time: 15.2s
+
+[Gen 142/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 14.58, Mean: -99.48, Std: 31.49 | Time: 14.4s
+
+[Gen 143/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 9.76, Mean: -95.79, Std: 29.18 | Time: 15.5s
+
+[Gen 144/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 9.56, Mean: -95.61, Std: 30.37 | Time: 14.9s
+
+[Gen 145/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... NEW RECORD! Best: 26.12, Mean: -97.92, Std: 30.24 | Time: 14.9s
+
+[Gen 146/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 0.42, Mean: -94.83, Std: 31.76 | Time: 15.3s
+
+[Gen 147/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -9.04, Mean: -99.29, Std: 29.30 | Time: 14.5s
+
+[Gen 148/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -6.88, Mean: -97.87, Std: 29.85 | Time: 15.1s
+
+[Gen 149/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 8.50, Mean: -100.92, Std: 31.18 | Time: 13.7s
+
+[Gen 150/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -4.24, Mean: -97.02, Std: 29.19 | Recording video... OK (reward: -111.9, steps: 37) | Saving checkpoint... 模型已保存到 best_model_gen150.npy
+Done | Time: 14.0s
+
+[Gen 151/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -9.74, Mean: -95.22, Std: 33.19 | Time: 15.9s
+
+[Gen 152/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 18.45, Mean: -100.59, Std: 29.04 | Time: 14.9s
+
+[Gen 153/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: -1.14, Mean: -99.34, Std: 29.66 | Time: 16.0s
+
+[Gen 154/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 12.20, Mean: -96.10, Std: 28.44 | Time: 16.8s
+
+[Gen 155/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 1.71, Mean: -97.28, Std: 30.73 | Time: 16.3s
+
+[Gen 156/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 3.07, Mean: -98.20, Std: 29.71 | Time: 15.9s
+
+[Gen 157/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 12.36, Mean: -99.64, Std: 30.75 | Time: 14.8s
+
+[Gen 158/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 8.94, Mean: -91.99, Std: 33.39 | Time: 16.4s
+
+[Gen 159/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 21.74, Mean: -96.65, Std: 36.68 | Time: 15.3s
+
+[Gen 160/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 23.82, Mean: -89.83, Std: 37.61 | Time: 15.9s
+
+[Gen 161/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 10.20, Mean: -93.62, Std: 31.88 | Time: 16.8s
+
+[Gen 162/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... NEW RECORD! Best: 28.74, Mean: -90.25, Std: 34.97 | Time: 16.9s
+
+[Gen 163/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 25.12, Mean: -81.28, Std: 38.54 | Time: 18.0s
+
+[Gen 164/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 18.42, Mean: -86.51, Std: 41.19 | Time: 15.3s
+
+[Gen 165/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 7.88, Mean: -88.07, Std: 42.72 | Time: 16.6s
+
+[Gen 166/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 9.30, Mean: -89.13, Std: 38.66 | Time: 14.9s
+
+[Gen 167/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... NEW RECORD! Best: 38.66, Mean: -86.00, Std: 42.06 | Time: 14.7s
+
+[Gen 168/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 36.57, Mean: -88.22, Std: 39.25 | Time: 14.4s
+
+[Gen 169/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... NEW RECORD! Best: 48.01, Mean: -81.11, Std: 42.74 | Time: 16.7s
+
+[Gen 170/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... NEW RECORD! Best: 58.35, Mean: -84.99, Std: 44.03 | Time: 15.8s
+
+[Gen 171/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 24.29, Mean: -81.37, Std: 42.43 | Time: 19.2s
+
+[Gen 172/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 30.64, Mean: -88.09, Std: 40.06 | Time: 24.4s
+
+[Gen 173/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 27.45, Mean: -85.54, Std: 41.16 | Time: 20.7s
+
+[Gen 174/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 52.56, Mean: -84.79, Std: 41.04 | Time: 103.6s
+
+[Gen 175/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 27.88, Mean: -82.52, Std: 39.12 | Time: 142.4s
+
+[Gen 176/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... NEW RECORD! Best: 59.85, Mean: -79.36, Std: 46.51 | Time: 40.5s
+
+[Gen 177/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 59.63, Mean: -84.49, Std: 39.77 | Time: 36.5s
+
+[Gen 178/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 55.29, Mean: -85.49, Std: 42.04 | Time: 77.9s
+
+[Gen 179/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 54.41, Mean: -74.05, Std: 47.48 | Time: 103.6s
+
+[Gen 180/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... NEW RECORD! Best: 71.99, Mean: -67.63, Std: 53.33 | Time: 51.2s
+
+[Gen 181/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 65.02, Mean: -63.35, Std: 50.54 | Time: 95.7s
+
+[Gen 182/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 67.24, Mean: -66.24, Std: 55.40 | Time: 98.5s
+
+[Gen 183/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 71.37, Mean: -59.68, Std: 55.59 | Time: 31.3s
+
+[Gen 184/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 66.58, Mean: -59.77, Std: 55.30 | Time: 43.7s
+
+[Gen 185/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 56.94, Mean: -62.42, Std: 55.23 | Time: 140.9s
+
+[Gen 186/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... NEW RECORD! Best: 75.48, Mean: -49.72, Std: 55.00 | Time: 197.5s
+
+[Gen 187/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 37.58, Mean: -47.86, Std: 53.80 | Time: 42.6s
+
+[Gen 188/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 57.35, Mean: -40.63, Std: 54.53 | Time: 418.0s
+
+[Gen 189/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 66.58, Mean: -45.87, Std: 57.26 | Time: 45.0s
+
+[Gen 190/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 57.61, Mean: -44.16, Std: 57.30 | Time: 181.2s
+
+[Gen 191/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 61.16, Mean: -43.30, Std: 55.58 | Time: 1572.2s
+
+[Gen 192/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 67.80, Mean: -47.31, Std: 58.22 | Time: 23.9s
+
+[Gen 193/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 61.24, Mean: -48.33, Std: 60.00 | Time: 22.6s
+
+[Gen 194/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... NEW RECORD! Best: 86.22, Mean: -53.66, Std: 58.30 | Time: 21.9s
+
+[Gen 195/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 68.81, Mean: -51.07, Std: 58.26 | Time: 22.3s
+
+[Gen 196/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 69.95, Mean: -45.79, Std: 57.63 | Time: 23.6s
+
+[Gen 197/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 78.30, Mean: -50.64, Std: 60.10 | Time: 21.4s
+
+[Gen 198/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 81.51, Mean: -48.08, Std: 60.15 | Time: 22.6s
+
+[Gen 199/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 68.97, Mean: -34.14, Std: 58.12 | Time: 24.4s
+
+[Gen 200/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 76.24, Mean: -39.17, Std: 62.18 | Recording video... /opt/anaconda3/envs/ga-humanoid/lib/python3.10/site-packages/gymnasium/wrappers/rendering.py:293: UserWarning: [33mWARN: Overwriting existing videos at /Users/cq123222/Desktop/25-26 Fall/生命科学导论/GA/videos/gen_200 folder (try specifying a different `video_folder` for the `RecordVideo` wrapper if this is not desired)[0m
+  logger.warn(
+OK (reward: 69.0, steps: 1000) | Saving checkpoint... 模型已保存到 best_model_gen200.npy
+Done | Time: 32.6s
+
+[Gen 201/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 72.54, Mean: -55.72, Std: 62.82 | Time: 20.3s
+
+[Gen 202/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 62.51, Mean: -63.56, Std: 59.12 | Time: 18.6s
+
+[Gen 203/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... NEW RECORD! Best: 89.21, Mean: -58.18, Std: 62.25 | Time: 19.1s
+
+[Gen 204/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 65.13, Mean: -56.39, Std: 63.07 | Time: 18.6s
+
+[Gen 205/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 71.88, Mean: -56.37, Std: 58.66 | Time: 20.0s
+
+[Gen 206/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 79.39, Mean: -61.34, Std: 61.13 | Time: 19.8s
+
+[Gen 207/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 60.74, Mean: -58.65, Std: 60.29 | Time: 19.2s
+
+[Gen 208/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 73.96, Mean: -46.16, Std: 62.37 | Time: 21.7s
+
+[Gen 209/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 73.77, Mean: -52.55, Std: 64.15 | Time: 22.0s
+
+[Gen 210/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 74.71, Mean: -47.76, Std: 65.03 | Time: 20.2s
+
+[Gen 211/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 81.61, Mean: -48.96, Std: 64.50 | Time: 18.9s
+
+[Gen 212/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 78.09, Mean: -47.28, Std: 67.23 | Time: 18.8s
+
+[Gen 213/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... NEW RECORD! Best: 104.06, Mean: -53.65, Std: 64.97 | Time: 19.6s
+
+[Gen 214/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 93.14, Mean: -61.39, Std: 64.69 | Time: 17.8s
+
+[Gen 215/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 75.94, Mean: -49.54, Std: 63.28 | Time: 19.9s
+
+[Gen 216/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 73.90, Mean: -53.94, Std: 66.21 | Time: 18.5s
+
+[Gen 217/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 76.12, Mean: -51.59, Std: 66.99 | Time: 18.8s
+
+[Gen 218/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 76.63, Mean: -49.58, Std: 65.55 | Time: 18.9s
+
+[Gen 219/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 77.78, Mean: -49.71, Std: 64.84 | Time: 19.0s
+
+[Gen 220/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 82.95, Mean: -47.19, Std: 66.69 | Time: 28.2s
+
+[Gen 221/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 86.14, Mean: -48.65, Std: 67.84 | Time: 19.0s
+
+[Gen 222/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 81.91, Mean: -48.65, Std: 66.43 | Time: 18.5s
+
+[Gen 223/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 71.48, Mean: -43.39, Std: 61.50 | Time: 23.1s
+
+[Gen 224/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 77.56, Mean: -42.84, Std: 63.75 | Time: 22.1s
+
+[Gen 225/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 89.62, Mean: -43.61, Std: 68.18 | Time: 19.7s
+
+[Gen 226/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 89.60, Mean: -46.03, Std: 73.89 | Time: 18.1s
+
+[Gen 227/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 85.57, Mean: -57.60, Std: 66.37 | Time: 17.1s
+
+[Gen 228/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 80.67, Mean: -44.92, Std: 68.58 | Time: 18.7s
+
+[Gen 229/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 69.47, Mean: -61.21, Std: 66.19 | Time: 16.1s
+
+[Gen 230/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 88.00, Mean: -50.68, Std: 65.56 | Time: 19.1s
+
+[Gen 231/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 89.25, Mean: -42.73, Std: 70.87 | Time: 19.1s
+
+[Gen 232/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 91.26, Mean: -37.98, Std: 67.53 | Time: 20.1s
+
+[Gen 233/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 84.90, Mean: -48.55, Std: 68.48 | Time: 19.7s
+
+[Gen 234/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 99.73, Mean: -46.96, Std: 68.70 | Time: 19.6s
+
+[Gen 235/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 94.63, Mean: -40.75, Std: 66.82 | Time: 21.1s
+
+[Gen 236/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 87.29, Mean: -42.06, Std: 69.66 | Time: 20.2s
+
+[Gen 237/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 83.20, Mean: -38.35, Std: 68.18 | Time: 20.9s
+
+[Gen 238/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 93.42, Mean: -29.69, Std: 73.69 | Time: 20.4s
+
+[Gen 239/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 94.15, Mean: -35.04, Std: 74.19 | Time: 19.7s
+
+[Gen 240/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 90.46, Mean: -14.87, Std: 75.41 | Time: 21.5s
+
+[Gen 241/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 97.24, Mean: -27.62, Std: 76.36 | Time: 19.1s
+
+[Gen 242/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 93.39, Mean: -17.71, Std: 72.52 | Time: 21.7s
+
+[Gen 243/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... NEW RECORD! Best: 105.31, Mean: -26.54, Std: 75.86 | Time: 19.9s
+
+[Gen 244/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 95.09, Mean: -18.34, Std: 78.28 | Time: 20.3s
+
+[Gen 245/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 101.24, Mean: -33.45, Std: 78.50 | Time: 18.6s
+
+[Gen 246/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 99.87, Mean: -34.18, Std: 76.76 | Time: 18.5s
+
+[Gen 247/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 97.34, Mean: -42.36, Std: 75.94 | Time: 17.4s
+
+[Gen 248/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 98.63, Mean: -44.33, Std: 77.00 | Time: 16.3s
+
+[Gen 249/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 89.21, Mean: -47.08, Std: 77.07 | Time: 15.8s
+
+[Gen 250/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 92.46, Mean: -44.10, Std: 76.45 | Recording video... OK (reward: -87.5, steps: 736) | Saving checkpoint... 模型已保存到 best_model_gen250.npy
+Done | Time: 23.7s
+
+[Gen 251/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 95.81, Mean: -45.97, Std: 73.97 | Time: 16.9s
+
+[Gen 252/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 101.24, Mean: -34.32, Std: 75.97 | Time: 18.9s
+
+[Gen 253/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 84.65, Mean: -28.44, Std: 74.05 | Time: 20.4s
+
+[Gen 254/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 89.74, Mean: -36.66, Std: 75.11 | Time: 19.2s
+
+[Gen 255/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 85.23, Mean: -33.44, Std: 72.18 | Time: 19.5s
+
+[Gen 256/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 86.37, Mean: -24.62, Std: 71.64 | Time: 20.9s
+
+[Gen 257/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 85.26, Mean: -36.25, Std: 73.09 | Time: 18.7s
+
+[Gen 258/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 87.91, Mean: -30.54, Std: 75.52 | Time: 20.5s
+
+[Gen 259/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 96.79, Mean: -47.00, Std: 73.64 | Time: 17.0s
+
+[Gen 260/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 95.25, Mean: -26.03, Std: 77.35 | Time: 20.5s
+
+[Gen 261/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 93.26, Mean: -40.50, Std: 79.00 | Time: 17.4s
+
+[Gen 262/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 96.02, Mean: -27.22, Std: 79.39 | Time: 20.2s
+
+[Gen 263/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 93.69, Mean: -35.22, Std: 78.88 | Time: 18.5s
+
+[Gen 264/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 92.59, Mean: -26.11, Std: 79.67 | Time: 19.8s
+
+[Gen 265/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 87.78, Mean: -30.59, Std: 80.14 | Time: 18.5s
+
+[Gen 266/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 87.30, Mean: -19.59, Std: 74.81 | Time: 21.1s
+
+[Gen 267/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 94.26, Mean: -22.35, Std: 78.09 | Time: 20.2s
+
+[Gen 268/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 96.79, Mean: -8.14, Std: 77.67 | Time: 21.1s
+
+[Gen 269/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 95.31, Mean: -15.45, Std: 80.81 | Time: 20.4s
+
+[Gen 270/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 100.91, Mean: -25.68, Std: 81.54 | Time: 18.4s
+
+[Gen 271/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 94.48, Mean: -50.65, Std: 80.08 | Time: 14.9s
+
+[Gen 272/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 91.86, Mean: -21.76, Std: 84.39 | Time: 17.9s
+
+[Gen 273/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 99.14, Mean: -36.55, Std: 84.34 | Time: 16.7s
+
+[Gen 274/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 96.41, Mean: -28.85, Std: 82.16 | Time: 18.1s
+
+[Gen 275/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 94.20, Mean: -24.59, Std: 83.69 | Time: 18.3s
+
+[Gen 276/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 96.70, Mean: -38.89, Std: 82.39 | Time: 16.2s
+
+[Gen 277/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 96.75, Mean: -39.01, Std: 81.99 | Time: 16.1s
+
+[Gen 278/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 103.91, Mean: -41.41, Std: 84.75 | Time: 15.3s
+
+[Gen 279/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 91.29, Mean: -37.75, Std: 83.63 | Time: 16.3s
+
+[Gen 280/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 97.43, Mean: -16.96, Std: 83.82 | Time: 19.2s
+
+[Gen 281/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 98.95, Mean: -28.39, Std: 82.97 | Time: 17.4s
+
+[Gen 282/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 100.41, Mean: -25.44, Std: 85.10 | Time: 17.4s
+
+[Gen 283/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 102.03, Mean: -33.66, Std: 86.65 | Time: 16.5s
+
+[Gen 284/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 92.71, Mean: -37.80, Std: 82.58 | Time: 15.6s
+
+[Gen 285/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 92.36, Mean: -16.38, Std: 84.42 | Time: 18.2s
+
+[Gen 286/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 98.37, Mean: -17.69, Std: 84.90 | Time: 18.8s
+
+[Gen 287/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 94.66, Mean: -12.85, Std: 82.71 | Time: 19.6s
+
+[Gen 288/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 94.32, Mean: -12.98, Std: 80.06 | Time: 20.3s
+
+[Gen 289/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 95.37, Mean: -21.96, Std: 84.43 | Time: 18.5s
+
+[Gen 290/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... NEW RECORD! Best: 105.78, Mean: -33.34, Std: 83.24 | Time: 17.4s
+
+[Gen 291/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 92.58, Mean: -40.58, Std: 78.19 | Time: 16.2s
+
+[Gen 292/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 91.36, Mean: -25.94, Std: 78.51 | Time: 19.8s
+
+[Gen 293/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 99.26, Mean: -43.26, Std: 79.88 | Time: 15.8s
+
+[Gen 294/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 92.95, Mean: -44.49, Std: 81.39 | Time: 16.0s
+
+[Gen 295/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 92.59, Mean: -29.06, Std: 79.49 | Time: 18.9s
+
+[Gen 296/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 94.28, Mean: -13.76, Std: 76.99 | Time: 21.3s
+
+[Gen 297/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 102.86, Mean: -2.84, Std: 77.40 | Time: 22.2s
+
+[Gen 298/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 99.70, Mean: -0.79, Std: 83.01 | Time: 20.9s
+
+[Gen 299/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 99.98, Mean: -7.67, Std: 82.13 | Time: 20.9s
+
+[Gen 300/300] Eval: 10/150... Eval: 20/150... Eval: 30/150... Eval: 40/150... Eval: 50/150... Eval: 60/150... Eval: 70/150... Eval: 80/150... Eval: 90/150... Eval: 100/150... Eval: 110/150... Eval: 120/150... Eval: 130/150... Eval: 140/150... Eval: 150/150... Best: 96.62, Mean: -5.64, Std: 84.79 | Recording video... /opt/anaconda3/envs/ga-humanoid/lib/python3.10/site-packages/gymnasium/wrappers/rendering.py:293: UserWarning: [33mWARN: Overwriting existing videos at /Users/cq123222/Desktop/25-26 Fall/生命科学导论/GA/videos/gen_300 folder (try specifying a different `video_folder` for the `RecordVideo` wrapper if this is not desired)[0m
+  logger.warn(
+OK (reward: 52.5, steps: 1000) | Saving checkpoint... 模型已保存到 best_model_gen300.npy
+Done | Time: 30.6s
+============================================================
+训练完成！
+============================================================
+总用时: 124.3分钟
+最佳适应度: 105.78
+
+模型已保存到 best_model.npy
+📹 录制最终最佳个体视频...
+OK (reward: -102.4, steps: 261) 
+模型已保存为: best_model.npy
+视频已保存到: videos/ 目录
+训练统计已保存为: training_stats.npy
+
+使用 python visualize.py 查看训练曲线和最终效果
