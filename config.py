@@ -8,23 +8,27 @@ ENV_NAME = 'BipedalWalker-v3'  # 环境名称: 'Humanoid-v4', 'BipedalWalker-v3'
 FALLBACK_ENV = 'BipedalWalker-v3'  # 备选环境
 
 # ==================== 遗传算法参数 ====================
-POPULATION_SIZE = 180       # 种群大小 - Round 4: 进一步增大
-GENERATIONS = 400           # 训练代数 - 更多机会突破
-MUTATION_RATE = 0.25        # 变异率 - 更强探索
-MUTATION_SCALE = 0.5        # 变异幅度 - 更大跳跃
-CROSSOVER_RATE = 0.75       # 交叉率 - 略降，增加独立性
-ELITE_RATIO = 0.015         # 精英比例 - 约3个精英
-TOURNAMENT_SIZE = 5         # 锦标赛大小 - 降低选择压力
+# Round 7: Round 4参数 + 更多代数 + 随机地形（已修复视频保存）
+POPULATION_SIZE = 180       # Round 4参数
+GENERATIONS = 600           # ↑ 增加到600代，给更多突破机会
+MUTATION_RATE = 0.25        # Round 4参数
+MUTATION_SCALE = 0.5        # Round 4参数
+CROSSOVER_RATE = 0.75       # Round 4参数
+ELITE_RATIO = 0.015         # Round 4参数 (约3个精英)
+TOURNAMENT_SIZE = 5         # Round 4参数
 
 # ==================== 神经网络参数 ====================
-HIDDEN_LAYERS = [256, 128, 64]  # Round 4: 超大网络，36K+参数
+HIDDEN_LAYERS = [256, 128, 64]  # 保持大网络
 
 # ==================== 训练参数 ====================
 MAX_STEPS = 1000            # 每个episode的最大步数
+USE_FIXED_TERRAIN = False   # ✓ Round 4: 使用随机地形
+TERRAIN_SEEDS = None        # Round 4: 随机地形不需要
+EVAL_EPISODES = 1           # Round 4: 单次评估
 RENDER_BEST = False         # 是否渲染最佳个体（改为False加快训练）
 RENDER_FREQUENCY = 1        # 每隔几代渲染一次（设为1表示每代都渲染）
-SAVE_FREQUENCY = 50         # 每隔几代保存一次模型（改为50代）
-VIDEO_FREQUENCY = 50        # 每隔几代保存一次视频（改为50代）
+SAVE_FREQUENCY = 100        # 每隔几代保存一次模型
+VIDEO_FREQUENCY = 999999    # 不定期录视频（只在NEW RECORD时录）
 
 # ==================== 快速测试配置 ====================
 # 如果想快速测试，可以使用这些参数

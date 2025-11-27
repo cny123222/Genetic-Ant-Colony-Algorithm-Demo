@@ -14,26 +14,58 @@ from genetic_algorithm import GeneticAlgorithm, AdaptiveGeneticAlgorithm
 import config
 
 
-def evaluate_individual(params, network, env, max_steps):
-    """评估单个个体的适应度"""
-    network.set_params(params)
-    observation, info = env.reset()
-    total_reward = 0.0
-    
-    for step in range(max_steps):
-        action = network.predict(observation)
-        observation, reward, terminated, truncated, info = env.step(action)
-        total_reward += reward
-        
-        if terminated or truncated:
-            break
-    
-    return total_reward
-
-
-def save_video_of_best(params, network, env_name, generation, max_steps, video_dir="videos", num_trials=3):
+def evaluate_individual(params, network, env, max_steps, terrain_seeds=None):
     """
-    保存最优个体的视频（录制多次，保存最好的一次）
+    评估单个个体的适应度
+    
+    Args:
+        terrain_seeds: 如果提供，使用固定地形seeds评估；否则随机评估
+    
+    Returns:
+        avg_reward: 平均奖励
+        best_seed: 表现最好的那次的seed（用于录视频）
+    """
+    network.set_params(params)
+    
+    if terrain_seeds is not None:
+        # 固定地形模式：在多个固定地形上评估，取平均
+        episode_rewards = []
+        for seed in terrain_seeds:
+            observation, info = env.reset(seed=seed)
+            episode_reward = 0.0
+            
+            for step in range(max_steps):
+                action = network.predict(observation)
+                observation, reward, terminated, truncated, info = env.step(action)
+                episode_reward += reward
+                
+                if terminated or truncated:
+                    break
+            
+            episode_rewards.append(episode_reward)
+        
+        # 返回平均奖励和第一个seed（固定地形时用于录视频）
+        return np.mean(episode_rewards), terrain_seeds[0]
+    else:
+        # 随机地形模式（兼容旧代码）
+        seed = np.random.randint(0, 1000000)
+        observation, info = env.reset(seed=seed)
+        episode_reward = 0.0
+        
+        for step in range(max_steps):
+            action = network.predict(observation)
+            observation, reward, terminated, truncated, info = env.step(action)
+            episode_reward += reward
+            
+            if terminated or truncated:
+                break
+        
+        return episode_reward, seed
+
+
+def save_video_of_best(params, network, env_name, generation, max_steps, seed=None, video_dir="videos"):
+    """
+    保存最优个体的视频
     
     Args:
         params: 神经网络参数
@@ -41,35 +73,19 @@ def save_video_of_best(params, network, env_name, generation, max_steps, video_d
         env_name: 环境名称
         generation: 当前代数
         max_steps: 最大步数
+        seed: 环境随机种子（固定地形模式下必须提供）
         video_dir: 视频保存目录
-        num_trials: 尝试次数（取最好的）
     """
     # 创建视频目录
     os.makedirs(video_dir, exist_ok=True)
     
     network.set_params(params)
     
-    # 先运行多次找到最好的seed
-    best_reward = -np.inf
-    best_seed = 0
+    # 使用提供的seed（固定地形）
+    if seed is None:
+        seed = 42  # 默认seed
     
-    for trial in range(num_trials):
-        env_test = gym.make(env_name)
-        observation, info = env_test.reset(seed=trial)
-        trial_reward = 0.0
-        
-        for step in range(max_steps):
-            action = network.predict(observation)
-            observation, reward, terminated, truncated, info = env_test.step(action)
-            trial_reward += reward
-            if terminated or truncated:
-                break
-        
-        env_test.close()
-        
-        if trial_reward > best_reward:
-            best_reward = trial_reward
-            best_seed = trial
+    best_seed = seed
     
     # 使用最好的seed录制视频
     try:
@@ -97,7 +113,7 @@ def save_video_of_best(params, network, env_name, generation, max_steps, video_d
         
         env.close()
         
-        print(f"OK (best of {num_trials} trials, reward: {total_reward:.1f}, steps: {steps})", end=' ')
+        print(f"OK (terrain seed={best_seed}, reward: {total_reward:.1f}, steps: {steps})", end=' ')
         sys.stdout.flush()
         return total_reward
         
@@ -181,10 +197,18 @@ def main():
         sys.stdout.flush()
         
         # 评估种群
+        # 如果使用固定地形，传入固定的地形seeds；否则为None（随机）
+        terrain_seeds = config.TERRAIN_SEEDS if config.USE_FIXED_TERRAIN else None
+        
         fitness_scores = []
+        individual_seeds = []  # 记录每个个体评估时的seed
+        
         for i, individual in enumerate(ga.population):
-            fitness = evaluate_individual(individual, network, env_train, config.MAX_STEPS)
-            fitness_scores.append(fitness)
+            avg_fitness, eval_seed = evaluate_individual(
+                individual, network, env_train, config.MAX_STEPS, terrain_seeds
+            )
+            fitness_scores.append(avg_fitness)
+            individual_seeds.append(eval_seed)  # 保存每个个体的seed
             
             if config.SHOW_PROGRESS and (i + 1) % 10 == 0:
                 print(f"Eval: {i + 1}/{config.POPULATION_SIZE}...", end=' ')
@@ -194,9 +218,17 @@ def main():
         
         # 统计
         stats = ga.get_statistics()
-        best_individual, best_fitness = ga.get_best_individual()
+        best_idx = np.argmax(fitness_scores)
+        best_individual = ga.population[best_idx]
+        best_fitness = fitness_scores[best_idx]
+        
+        # 录视频用的seed：使用最佳个体评估时的seed
+        video_seed = individual_seeds[best_idx]
+        
+        is_new_record = False
         
         if best_fitness > best_ever_fitness:
+            is_new_record = True
             best_ever_fitness = best_fitness
             best_ever_params = best_individual.copy()
             print(f"NEW RECORD! ", end='')
@@ -212,16 +244,29 @@ def main():
         print(f"Best: {stats['best']:.2f}, Mean: {stats['mean']:.2f}, Std: {stats['std']:.2f}", end=' ')
         sys.stdout.flush()
         
-        # 定期保存视频（使用历史最佳个体）
-        if ((generation + 1) % config.VIDEO_FREQUENCY == 0 or generation == 0) and best_ever_params is not None:
+        # 如果是新记录，立即录制视频（使用固定地形）
+        if is_new_record and best_ever_params is not None:
             print(f"| Recording video...", end=' ')
             sys.stdout.flush()
             save_video_of_best(
-                best_ever_params,  # 使用历史最佳
+                best_ever_params,
                 network, 
                 env_name, 
                 generation + 1, 
-                config.MAX_STEPS
+                config.MAX_STEPS,
+                seed=video_seed  # 使用固定地形的seed
+            )
+        # 定期保存视频（即使不是新记录）
+        elif ((generation + 1) % config.VIDEO_FREQUENCY == 0) and best_ever_params is not None:
+            print(f"| Recording video...", end=' ')
+            sys.stdout.flush()
+            save_video_of_best(
+                best_ever_params,
+                network, 
+                env_name, 
+                generation + 1, 
+                config.MAX_STEPS,
+                seed=video_seed
             )
         
         # 保存检查点
@@ -255,14 +300,16 @@ def main():
     save_network(network, config.BEST_MODEL_PATH)
     np.save(config.STATS_PATH, stats_history)
     
-    # 保存最终视频
+    # 保存最终视频（使用固定地形）
     print("📹 录制最终最佳个体视频...")
+    final_seed = config.TERRAIN_SEEDS[0] if config.USE_FIXED_TERRAIN else 42
     save_video_of_best(
         best_ever_params, 
         network, 
         env_name, 
         config.GENERATIONS, 
-        config.MAX_STEPS
+        config.MAX_STEPS,
+        seed=final_seed
     )
     
     env_train.close()
