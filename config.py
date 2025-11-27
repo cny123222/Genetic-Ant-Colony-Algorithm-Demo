@@ -8,16 +8,16 @@ ENV_NAME = 'BipedalWalker-v3'  # 环境名称: 'Humanoid-v4', 'BipedalWalker-v3'
 FALLBACK_ENV = 'BipedalWalker-v3'  # 备选环境
 
 # ==================== 遗传算法参数 ====================
-POPULATION_SIZE = 150       # 种群大小 - 进一步增加
-GENERATIONS = 300           # 训练代数 - 减少代数，增加质量
-MUTATION_RATE = 0.20        # 变异率 - 保持较高但不过分
-MUTATION_SCALE = 0.4        # 变异幅度 - 中等
-CROSSOVER_RATE = 0.8        # 交叉率 - 恢复
-ELITE_RATIO = 0.02          # 精英比例 - 极少精英（150*0.02=3个）
-TOURNAMENT_SIZE = 7         # 锦标赛大小 - 更强选择压力
+POPULATION_SIZE = 180       # 种群大小 - Round 4: 进一步增大
+GENERATIONS = 400           # 训练代数 - 更多机会突破
+MUTATION_RATE = 0.25        # 变异率 - 更强探索
+MUTATION_SCALE = 0.5        # 变异幅度 - 更大跳跃
+CROSSOVER_RATE = 0.75       # 交叉率 - 略降，增加独立性
+ELITE_RATIO = 0.015         # 精英比例 - 约3个精英
+TOURNAMENT_SIZE = 5         # 锦标赛大小 - 降低选择压力
 
 # ==================== 神经网络参数 ====================
-HIDDEN_LAYERS = [128, 64, 32]  # 更大更深的网络 - 增强表达能力
+HIDDEN_LAYERS = [256, 128, 64]  # Round 4: 超大网络，36K+参数
 
 # ==================== 训练参数 ====================
 MAX_STEPS = 1000            # 每个episode的最大步数

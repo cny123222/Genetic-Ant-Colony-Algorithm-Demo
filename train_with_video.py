@@ -31,9 +31,9 @@ def evaluate_individual(params, network, env, max_steps):
     return total_reward
 
 
-def save_video_of_best(params, network, env_name, generation, max_steps, video_dir="videos"):
+def save_video_of_best(params, network, env_name, generation, max_steps, video_dir="videos", num_trials=3):
     """
-    保存最优个体的视频
+    保存最优个体的视频（录制多次，保存最好的一次）
     
     Args:
         params: 神经网络参数
@@ -42,25 +42,47 @@ def save_video_of_best(params, network, env_name, generation, max_steps, video_d
         generation: 当前代数
         max_steps: 最大步数
         video_dir: 视频保存目录
+        num_trials: 尝试次数（取最好的）
     """
     # 创建视频目录
     os.makedirs(video_dir, exist_ok=True)
     
-    # 创建录制环境
-    video_path = os.path.join(video_dir, f"gen_{generation:03d}")
+    network.set_params(params)
     
+    # 先运行多次找到最好的seed
+    best_reward = -np.inf
+    best_seed = 0
+    
+    for trial in range(num_trials):
+        env_test = gym.make(env_name)
+        observation, info = env_test.reset(seed=trial)
+        trial_reward = 0.0
+        
+        for step in range(max_steps):
+            action = network.predict(observation)
+            observation, reward, terminated, truncated, info = env_test.step(action)
+            trial_reward += reward
+            if terminated or truncated:
+                break
+        
+        env_test.close()
+        
+        if trial_reward > best_reward:
+            best_reward = trial_reward
+            best_seed = trial
+    
+    # 使用最好的seed录制视频
     try:
-        # 使用 RecordVideo wrapper
+        video_path = os.path.join(video_dir, f"gen_{generation:03d}")
         env = gym.make(env_name, render_mode='rgb_array')
         env = gym.wrappers.RecordVideo(
             env, 
             video_path,
-            episode_trigger=lambda x: True,  # 录制所有episode
+            episode_trigger=lambda x: True,
             name_prefix=f"best_gen{generation}"
         )
         
-        network.set_params(params)
-        observation, info = env.reset()
+        observation, info = env.reset(seed=best_seed)
         total_reward = 0.0
         steps = 0
         
@@ -75,7 +97,7 @@ def save_video_of_best(params, network, env_name, generation, max_steps, video_d
         
         env.close()
         
-        print(f"OK (reward: {total_reward:.1f}, steps: {steps})", end=' ')
+        print(f"OK (best of {num_trials} trials, reward: {total_reward:.1f}, steps: {steps})", end=' ')
         sys.stdout.flush()
         return total_reward
         
