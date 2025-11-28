@@ -1,0 +1,81 @@
+============================================================
+当前配置
+============================================================
+环境: BipedalWalker-v3
+种群大小: 180
+训练代数: 600
+变异率: 0.25
+交叉率: 0.75
+精英比例: 0.015
+神经网络结构: 输入 → 256 → 128 → 64 → 输出
+每集最大步数: 1000
+============================================================
+
+开始时间: 2025-11-28 19:14:49
+视频保存频率: 每 999999 代
+
+初始化环境...
+/opt/anaconda3/envs/ga-humanoid/lib/python3.10/site-packages/pygame/pkgdata.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_stream, resource_exists
+✓ 成功加载 BipedalWalker-v3
+观察空间: 24维, 动作空间: 4维
+
+网络参数数量: 47812
+
+使用标准遗传算法（固定高变异率：0.25）
+============================================================
+开始训练（无实时渲染，速度更快）
+============================================================
+
+
+[Gen 1/600] Eval: 10/180... Eval: 20/180... Eval: 30/180... Eval: 40/180... Eval: 50/180... Eval: 60/180... Eval: 70/180... Eval: 80/180... Eval: 90/180... Eval: 100/180... Eval: 110/180... Eval: 120/180... Eval: 130/180... Eval: 140/180... Eval: 150/180... Eval: 160/180... Eval: 170/180... Eval: 180/180... NEW RECORD! Best: -91.20, Mean: -92.35, Std: 1.79 | Recording video... OK (terrain seed=508465, reward: -91.2, steps: 126) | Time: 5.2s
+
+[Gen 2/600] Eval: 10/180... Eval: 20/180... Eval: 30/180... Eval: 40/180... Eval: 50/180... Eval: 60/180... Eval: 70/180... Eval: 80/180... Eval: 90/180... Eval: 100/180... Eval: 110/180... Eval: 120/180... Eval: 130/180... Eval: 140/180... Eval: 150/180... Eval: 160/180... Eval: 170/180... Eval: 180/180... NEW RECORD! Best: -40.38, Mean: -104.28, Std: 21.11 | Recording video... OK (terrain seed=351225, reward: -35.0, steps: 1000) | Time: 15.8s
+
+[Gen 3/600] Eval: 10/180... Eval: 20/180... Eval: 30/180... Eval: 40/180... Eval: 50/180... Eval: 60/180... Eval: 70/180... Eval: 80/180... Eval: 90/180... Eval: 100/180... Eval: 110/180... Eval: 120/180... Eval: 130/180... Eval: 140/180... Eval: 150/180... Eval: 160/180... Eval: 170/180... Eval: 180/180... NEW RECORD! Best: -35.37, Mean: -108.88, Std: 17.98 | Recording video... OK (terrain seed=812036, reward: -44.5, steps: 1000) | Time: 14.0s
+
+[Gen 4/600] Eval: 10/180... Eval: 20/180... Eval: 30/180... Eval: 40/180... Eval: 50/180... Eval: 60/180... Eval: 70/180... Eval: 80/180... Eval: 90/180... Eval: 100/180... Eval: 110/180... Eval: 120/180... Eval: 130/180... Eval: 140/180... Eval: 150/180... Eval: 160/180... Eval: 170/180... Eval: 180/180... Best: -40.77, Mean: -110.32, Std: 17.30 | Time: 8.2s
+
+[Gen 5/600] Eval: 10/180... Eval: 20/180... Eval: 30/180... Eval: 40/180... Eval: 50/180... Eval: 60/180... Eval: 70/180... Eval: 80/180... Eval: 90/180... Eval: 100/180... Eval: 110/180... Eval: 120/180... Eval: 130/180... Eval: 140/180... Eval: 150/180... Eval: 160/180... Eval: 170/180... Eval: 180/180... Best: -45.09, Mean: -109.35, Std: 16.56 | Time: 8.0s
+
+[Gen 6/600] Eval: 10/180... Eval: 20/180... Eval: 30/180... Eval: 40/180... Eval: 50/180... Eval: 60/180... Eval: 70/180... Eval: 80/180... Eval: 90/180... Eval: 100/180... Eval: 110/180... Eval: 120/180... Eval: 130/180... Eval: 140/180... Eval: 150/180... Eval: 160/180... Eval: 170/180... Eval: 180/180... Best: -45.17, Mean: -109.98, Std: 19.37 | Time: 8.3s
+
+[Gen 7/600] Eval: 10/180... Eval: 20/180... Eval: 30/180... Eval: 40/180... Eval: 50/180... Eval: 60/180... Eval: 70/180... Eval: 80/180... Eval: 90/180... Eval: 100/180... Eval: 110/180... Eval: 120/180... Eval: 130/180... Eval: 140/180... Eval: 150/180... Eval: 160/180... Eval: 170/180... Eval: 180/180... Best: -45.36, Mean: -112.46, Std: 18.54 | Time: 7.8s
+
+[Gen 8/600] Eval: 10/180... Eval: 20/180... Eval: 30/180... Eval: 40/180... Eval: 50/180... Eval: 60/180... Eval: 70/180... Eval: 80/180... Eval: 90/180... Eval: 100/180... Eval: 110/180... Eval: 120/180... Eval: 130/180... Eval: 140/180... Eval: 150/180... Eval: 160/180... Eval: 170/180... Eval: 180/180... Best: -44.94, Mean: -111.63, Std: 16.35 | Time: 7.7s
+
+[Gen 9/600] Eval: 10/180... Eval: 20/180... Eval: 30/180... Eval: 40/180... Eval: 50/180... Eval: 60/180... Eval: 70/180... Eval: 80/180... Eval: 90/180... Eval: 100/180... Eval: 110/180... Eval: 120/180... Eval: 130/180... Eval: 140/180... Eval: 150/180... Eval: 160/180... Eval: 170/180... Eval: 180/180... Best: -45.83, Mean: -111.20, Std: 19.07 | Time: 9.5s
+
+[Gen 10/600] Eval: 10/180... Eval: 20/180... Eval: 30/180... Eval: 40/180... Eval: 50/180... Eval: 60/180... Eval: 70/180... Eval: 80/180... Eval: 90/180... Eval: 100/180... Eval: 110/180... Eval: 120/180... Eval: 130/180... Eval: 140/180... Eval: 150/180... Eval: 160/180... Eval: 170/180... Eval: 180/180... Best: -42.19, Mean: -112.61, Std: 20.68 | Time: 8.2s
+
+[Gen 11/600] Eval: 10/180... Eval: 20/180... Eval: 30/180... Eval: 40/180... Eval: 50/180... Eval: 60/180... Eval: 70/180... Eval: 80/180... Eval: 90/180... Eval: 100/180... Eval: 110/180... Eval: 120/180... Eval: 130/180... Eval: 140/180... Eval: 150/180... Eval: 160/180... Eval: 170/180... Eval: 180/180... Best: -50.31, Mean: -110.49, Std: 15.88 | Time: 9.1s
+
+[Gen 12/600] Eval: 10/180... Eval: 20/180... Eval: 30/180... Eval: 40/180... Eval: 50/180... Eval: 60/180... Eval: 70/180... Eval: 80/180... Eval: 90/180... Eval: 100/180... Eval: 110/180... Eval: 120/180... Eval: 130/180... Eval: 140/180... Eval: 150/180... Eval: 160/180... Eval: 170/180... Eval: 180/180... Best: -73.04, Mean: -116.05, Std: 21.59 | Time: 8.3s
+
+[Gen 13/600] Eval: 10/180... Eval: 20/180... Eval: 30/180... Eval: 40/180... Eval: 50/180... Eval: 60/180... Eval: 70/180... Eval: 80/180... Eval: 90/180... Eval: 100/180... Eval: 110/180... Eval: 120/180... Eval: 130/180... Eval: 140/180... Eval: 150/180... Eval: 160/180... Eval: 170/180... Eval: 180/180... Best: -62.99, Mean: -113.22, Std: 15.82 | Time: 8.6s
+
+[Gen 14/600] Eval: 10/180... Eval: 20/180... Eval: 30/180... Eval: 40/180... Eval: 50/180... Eval: 60/180... Eval: 70/180... Eval: 80/180... Eval: 90/180... Eval: 100/180... Eval: 110/180... Eval: 120/180... Eval: 130/180... Eval: 140/180... Eval: 150/180... Eval: 160/180... Eval: 170/180... Eval: 180/180... Best: -81.08, Mean: -116.14, Std: 17.94 | Time: 8.3s
+
+[Gen 15/600] Eval: 10/180... Eval: 20/180... Eval: 30/180... Eval: 40/180... Eval: 50/180... Eval: 60/180... Eval: 70/180... Eval: 80/180... Eval: 90/180... Eval: 100/180... Eval: 110/180... Eval: 120/180... Eval: 130/180... Eval: 140/180... Eval: 150/180... Eval: 160/180... Eval: 170/180... Eval: 180/180... Best: -65.77, Mean: -115.58, Std: 22.71 | Time: 8.5s
+
+[Gen 16/600] Eval: 10/180... Eval: 20/180... Eval: 30/180... Eval: 40/180... Eval: 50/180... Eval: 60/180... Eval: 70/180... Eval: 80/180... Eval: 90/180... Eval: 100/180... Eval: 110/180... Eval: 120/180... Eval: 130/180... Eval: 140/180... Eval: 150/180... Eval: 160/180... Eval: 170/180... Eval: 180/180... Best: -49.25, Mean: -110.04, Std: 15.78 | Time: 8.6s
+
+[Gen 17/600] Eval: 10/180... Eval: 20/180... Eval: 30/180... Eval: 40/180... Eval: 50/180... Eval: 60/180... Eval: 70/180... Eval: 80/180... Eval: 90/180... Eval: 100/180... Eval: 110/180... Eval: 120/180... Eval: 130/180... Eval: 140/180... Eval: 150/180... Eval: 160/180... Eval: 170/180... Eval: 180/180... Best: -51.52, Mean: -112.02, Std: 18.33 | Time: 8.1s
+
+[Gen 18/600] Eval: 10/180... Eval: 20/180... Eval: 30/180... Eval: 40/180... Eval: 50/180... Eval: 60/180... Eval: 70/180... Eval: 80/180... Eval: 90/180... Eval: 100/180... Eval: 110/180... Eval: 120/180... Eval: 130/180... Eval: 140/180... Eval: 150/180... Eval: 160/180... Eval: 170/180... Eval: 180/180... Best: -47.59, Mean: -110.41, Std: 16.64 | Time: 10.0s
+
+[Gen 19/600] Eval: 10/180... Eval: 20/180... Eval: 30/180... Eval: 40/180... Eval: 50/180... Eval: 60/180... Eval: 70/180... Eval: 80/180... Eval: 90/180... Eval: 100/180... Eval: 110/180... Eval: 120/180... Eval: 130/180... Eval: 140/180... Eval: 150/180... Eval: 160/180... Eval: 170/180... Eval: 180/180... Best: -68.03, Mean: -113.08, Std: 18.17 | Time: 10.5s
+
+[Gen 20/600] Eval: 10/180... Eval: 20/180... Eval: 30/180... Eval: 40/180... Eval: 50/180... Eval: 60/180... Eval: 70/180... Eval: 80/180... Eval: 90/180... Eval: 100/180... Eval: 110/180... Eval: 120/180... Eval: 130/180... Eval: 140/180... Eval: 150/180... Eval: 160/180... Eval: 170/180... Eval: 180/180... Best: -60.47, Mean: -114.14, Std: 17.46 | Time: 10.1s
+
+[Gen 21/600] Eval: 10/180... Eval: 20/180... Eval: 30/180... Eval: 40/180... Eval: 50/180... Eval: 60/180... Eval: 70/180... Eval: 80/180... Eval: 90/180... Eval: 100/180... Eval: 110/180... Eval: 120/180... Eval: 130/180... Eval: 140/180... Eval: 150/180... Eval: 160/180... Eval: 170/180... Eval: 180/180... Best: -54.03, Mean: -110.48, Std: 15.49 | Time: 11.4s
+
+[Gen 22/600] Eval: 10/180... Eval: 20/180... Eval: 30/180... Eval: 40/180... Eval: 50/180... Eval: 60/180... Eval: 70/180... Eval: 80/180... Eval: 90/180... Eval: 100/180... Eval: 110/180... Eval: 120/180... Eval: 130/180... Eval: 140/180... Eval: 150/180... Eval: 160/180... Eval: 170/180... Eval: 180/180... Best: -63.11, Mean: -111.56, Std: 16.12 | Time: 9.4s
+
+[Gen 23/600] Eval: 10/180... Eval: 20/180... Eval: 30/180... Eval: 40/180... Eval: 50/180... Eval: 60/180... Eval: 70/180... Eval: 80/180... Eval: 90/180... Eval: 100/180... Eval: 110/180... Eval: 120/180... Eval: 130/180... Eval: 140/180... Eval: 150/180... Eval: 160/180... Eval: 170/180... Eval: 180/180... Best: -54.96, Mean: -111.28, Std: 18.66 | Time: 10.9s
+
+[Gen 24/600] Eval: 10/180... Eval: 20/180... Eval: 30/180... Eval: 40/180... Eval: 50/180... Eval: 60/180... Eval: 70/180... Eval: 80/180... Eval: 90/180... Eval: 100/180... Eval: 110/180... Eval: 120/180... Eval: 130/180... Eval: 140/180... Eval: 150/180... Eval: 160/180... Eval: 170/180... Eval: 180/180... Best: -49.35, Mean: -111.60, Std: 18.57 | Time: 9.9s
+
+[Gen 25/600] Eval: 10/180... Eval: 20/180... Eval: 30/180... Eval: 40/180... Eval: 50/180... Eval: 60/180... Eval: 70/180... Eval: 80/180... Eval: 90/180... Eval: 100/180... Eval: 110/180... Eval: 120/180... Eval: 130/180... Eval: 140/180... Eval: 150/180... Eval: 160/180... Eval: 170/180... Eval: 180/180... Best: -53.43, Mean: -111.08, Std: 20.88 | Time: 9.8s
+
+[Gen 26/600] Eval: 10/180... Eval: 20/180... 

@@ -8,20 +8,21 @@ ENV_NAME = 'BipedalWalker-v3'  # 环境名称: 'Humanoid-v4', 'BipedalWalker-v3'
 FALLBACK_ENV = 'BipedalWalker-v3'  # 备选环境
 
 # ==================== 遗传算法参数 ====================
-# Round 7: Round 4参数 + 更多代数 + 随机地形（已修复视频保存）
-POPULATION_SIZE = 180       # Round 4参数
-GENERATIONS = 600           # ↑ 增加到600代，给更多突破机会
-MUTATION_RATE = 0.25        # Round 4参数
-MUTATION_SCALE = 0.5        # Round 4参数
-CROSSOVER_RATE = 0.75       # Round 4参数
-ELITE_RATIO = 0.015         # Round 4参数 (约3个精英)
-TOURNAMENT_SIZE = 5         # Round 4参数
+# Round 7/12配置（已验证）
+POPULATION_SIZE = 180       # Round 7配置
+GENERATIONS = 600           # Round 7配置
+MUTATION_RATE = 0.25        # Round 7配置
+MUTATION_SCALE = 0.5        # Round 7配置
+CROSSOVER_RATE = 0.75       # Round 7配置
+ELITE_RATIO = 0.015         # Round 7配置
+TOURNAMENT_SIZE = 5         # Round 7配置
 
 # ==================== 神经网络参数 ====================
-HIDDEN_LAYERS = [256, 128, 64]  # 保持大网络
+HIDDEN_LAYERS = [256, 128, 64]  # BipedalWalker网络
 
 # ==================== 训练参数 ====================
-MAX_STEPS = 1000            # 每个episode的最大步数
+MAX_STEPS = 1000            # BipedalWalker最大步数
+RANDOM_SEED = 42            # 🌱 固定随机种子，保证复现性
 USE_FIXED_TERRAIN = False   # ✓ Round 4: 使用随机地形
 TERRAIN_SEEDS = None        # Round 4: 随机地形不需要
 EVAL_EPISODES = 1           # Round 4: 单次评估

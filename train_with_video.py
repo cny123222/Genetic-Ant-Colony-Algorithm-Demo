@@ -159,6 +159,7 @@ def main():
     print(f"网络参数数量: {network.get_param_count()}\n")
     
     # 创建标准遗传算法（固定变异率，持续探索）
+    random_seed = getattr(config, 'RANDOM_SEED', None)
     ga = GeneticAlgorithm(
         population_size=config.POPULATION_SIZE,
         param_count=network.get_param_count(),
@@ -166,7 +167,8 @@ def main():
         mutation_scale=config.MUTATION_SCALE,
         crossover_rate=config.CROSSOVER_RATE,
         elite_ratio=config.ELITE_RATIO,
-        tournament_size=config.TOURNAMENT_SIZE
+        tournament_size=config.TOURNAMENT_SIZE,
+        random_seed=random_seed  # 添加随机种子参数
     )
     print(f"使用标准遗传算法（固定高变异率：{config.MUTATION_RATE}）")
     

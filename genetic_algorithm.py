@@ -18,7 +18,8 @@ class GeneticAlgorithm:
         mutation_scale: float = 0.3,
         crossover_rate: float = 0.8,
         elite_ratio: float = 0.1,
-        tournament_size: int = 3
+        tournament_size: int = 3,
+        random_seed: int = None
     ):
         """
         初始化遗传算法
@@ -31,7 +32,13 @@ class GeneticAlgorithm:
             crossover_rate: 交叉率（发生交叉的概率）
             elite_ratio: 精英比例（直接保留到下一代的最优个体比例）
             tournament_size: 锦标赛选择的参赛个体数量
+            random_seed: 随机种子（保证复现性）
         """
+        # 设置随机种子
+        if random_seed is not None:
+            np.random.seed(random_seed)
+            print(f"🌱 使用固定随机种子: {random_seed} (保证完全复现)")
+        
         self.population_size = population_size
         self.param_count = param_count
         self.mutation_rate = mutation_rate
