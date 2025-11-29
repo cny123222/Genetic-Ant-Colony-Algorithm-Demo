@@ -53,9 +53,9 @@ def generate_courses(n=50):
         course = Course(f"课程{i+1:02d}", time_cost, value)
         courses.append(course)
     
-    # 时间预算：约为总时间的30%（更严格的约束）
+    # 时间预算：约为总时间的15%（非常严格的约束）
     total_time = sum(c.time_cost for c in courses)
-    time_budget = int(total_time * 0.3)
+    time_budget = int(total_time * 0.15)
     
     return courses, time_budget
 
@@ -338,9 +338,9 @@ def main():
     print("=" * 80)
     
     # 参数设置
-    N_COURSES = 200         # 课程数量（增加难度）
+    N_COURSES = 200         # 课程数量
     POPULATION_SIZE = 200   # 种群大小
-    GENERATIONS = 200       # 进化代数
+    GENERATIONS = 500       # 进化代数
     MUTATION_RATE = 0.02    # 变异率
     CROSSOVER_RATE = 0.85   # 交叉率
     ELITE_RATIO = 0.05      # 精英比例
@@ -360,7 +360,7 @@ def main():
     print(f"\n✅ 生成了 {len(courses)} 门课程")
     print(f"总时间: {sum(c.time_cost for c in courses)} 小时")
     print(f"总收获: {sum(c.value for c in courses)} 分")
-    print(f"时间预算: {time_budget} 小时 (约30%，更紧张的约束)")
+    print(f"时间预算: {time_budget} 小时 (约15%，非常严格的约束⚠️)")
     
     # 显示部分课程
     print("\n课程样例（前10门）：")
@@ -386,9 +386,8 @@ def main():
     for generation in range(GENERATIONS):
         ga.evolve()
         
-        # 动态调整打印频率
-        print_freq = max(1, GENERATIONS // 20)  # 打印20次
-        if (generation + 1) % print_freq == 0 or generation == 0:
+        # 每50代打印一次，初始也打印
+        if (generation + 1) % 50 == 0 or generation == 0:
             print(f"[Gen {generation+1:3d}/{GENERATIONS}] 最佳适应度: {ga.best_fitness:.1f}分")
     
     print(f"\n{'='*80}")
