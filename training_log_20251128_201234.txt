@@ -1,0 +1,51 @@
+============================================================
+当前配置
+============================================================
+环境: CartPole-v1
+种群大小: 50
+训练代数: 100
+变异率: 0.15
+交叉率: 0.8
+精英比例: 0.1
+神经网络结构: 输入 → 16 → 16 → 输出
+每集最大步数: 500
+============================================================
+
+开始时间: 2025-11-28 20:12:35
+视频保存频率: 每 999999 代
+
+初始化环境...
+✓ 成功加载 CartPole-v1
+观察空间: 4维, 动作空间: 2维 (离散)
+
+网络参数数量: 386
+
+使用标准遗传算法（固定高变异率：0.15）
+============================================================
+开始训练（无实时渲染，速度更快）
+============================================================
+
+
+[Gen 1/100] 
+
+错误: array([ 0.16933166, -0.0028623 ]) (<class 'numpy.ndarray'>) invalid
+Traceback (most recent call last):
+  File "/Users/cq123222/Desktop/25-26 Fall/生命科学导论/GA/train_with_video.py", line 351, in <module>
+    main()
+  File "/Users/cq123222/Desktop/25-26 Fall/生命科学导论/GA/train_with_video.py", line 230, in main
+    avg_fitness, eval_seed = evaluate_individual(
+  File "/Users/cq123222/Desktop/25-26 Fall/生命科学导论/GA/train_with_video.py", line 60, in evaluate_individual
+    observation, reward, terminated, truncated, info = env.step(action)
+  File "/opt/anaconda3/envs/ga-humanoid/lib/python3.10/site-packages/gymnasium/wrappers/common.py", line 125, in step
+    observation, reward, terminated, truncated, info = self.env.step(action)
+  File "/opt/anaconda3/envs/ga-humanoid/lib/python3.10/site-packages/gymnasium/wrappers/common.py", line 393, in step
+    return super().step(action)
+  File "/opt/anaconda3/envs/ga-humanoid/lib/python3.10/site-packages/gymnasium/core.py", line 327, in step
+    return self.env.step(action)
+  File "/opt/anaconda3/envs/ga-humanoid/lib/python3.10/site-packages/gymnasium/wrappers/common.py", line 283, in step
+    return env_step_passive_checker(self.env, action)
+  File "/opt/anaconda3/envs/ga-humanoid/lib/python3.10/site-packages/gymnasium/utils/passive_env_checker.py", line 207, in env_step_passive_checker
+    result = env.step(action)
+  File "/opt/anaconda3/envs/ga-humanoid/lib/python3.10/site-packages/gymnasium/envs/classic_control/cartpole.py", line 165, in step
+    assert self.action_space.contains(
+AssertionError: array([ 0.16933166, -0.0028623 ]) (<class 'numpy.ndarray'>) invalid

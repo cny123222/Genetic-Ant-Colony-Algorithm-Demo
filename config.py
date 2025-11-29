@@ -4,31 +4,31 @@
 """
 
 # ==================== 环境配置 ====================
-ENV_NAME = 'BipedalWalker-v3'  # 环境名称: 'Humanoid-v4', 'BipedalWalker-v3', 'Walker2d-v4'
-FALLBACK_ENV = 'BipedalWalker-v3'  # 备选环境
+ENV_NAME = 'CartPole-v1'  # 环境名称: 'CartPole-v1', 'BipedalWalker-v3', 'Hopper-v4'
+FALLBACK_ENV = 'CartPole-v1'  # 备选环境
 
 # ==================== 遗传算法参数 ====================
-# Round 7/12配置（已验证）
-POPULATION_SIZE = 180       # Round 7配置
-GENERATIONS = 600           # Round 7配置
-MUTATION_RATE = 0.25        # Round 7配置
-MUTATION_SCALE = 0.5        # Round 7配置
-CROSSOVER_RATE = 0.75       # Round 7配置
-ELITE_RATIO = 0.015         # Round 7配置
-TOURNAMENT_SIZE = 5         # Round 7配置
+# CartPole专用配置
+POPULATION_SIZE = 50        # CartPole种群大小
+GENERATIONS = 100           # CartPole代数
+MUTATION_RATE = 0.15        # CartPole变异率（较小）
+MUTATION_SCALE = 0.2        # CartPole变异幅度（较小）
+CROSSOVER_RATE = 0.8        # 交叉率
+ELITE_RATIO = 0.1           # 精英比例（保留更多好的）
+TOURNAMENT_SIZE = 3         # 锦标赛大小
 
 # ==================== 神经网络参数 ====================
-HIDDEN_LAYERS = [256, 128, 64]  # BipedalWalker网络
+HIDDEN_LAYERS = [16, 16]  # CartPole网络（简单任务用小网络）
 
 # ==================== 训练参数 ====================
-MAX_STEPS = 1000            # BipedalWalker最大步数
-RANDOM_SEED = 42            # 🌱 固定随机种子，保证复现性
-USE_FIXED_TERRAIN = False   # ✓ Round 4: 使用随机地形
-TERRAIN_SEEDS = None        # Round 4: 随机地形不需要
-EVAL_EPISODES = 1           # Round 4: 单次评估
+MAX_STEPS = 500             # CartPole最大步数
+RANDOM_SEED = None          # 随机种子（None=随机，提高成功率）
+USE_FIXED_TERRAIN = False   # CartPole不需要
+TERRAIN_SEEDS = None        # CartPole不需要
+EVAL_EPISODES = 1           # 单次评估
 RENDER_BEST = False         # 是否渲染最佳个体（改为False加快训练）
 RENDER_FREQUENCY = 1        # 每隔几代渲染一次（设为1表示每代都渲染）
-SAVE_FREQUENCY = 100        # 每隔几代保存一次模型
+SAVE_FREQUENCY = 50         # 每隔50代保存一次模型
 VIDEO_FREQUENCY = 999999    # 不定期录视频（只在NEW RECORD时录）
 
 # ==================== 快速测试配置 ====================

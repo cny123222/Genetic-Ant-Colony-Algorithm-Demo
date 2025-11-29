@@ -14,12 +14,13 @@ from genetic_algorithm import GeneticAlgorithm, AdaptiveGeneticAlgorithm
 import config
 
 
-def evaluate_individual(params, network, env, max_steps, terrain_seeds=None):
+def evaluate_individual(params, network, env, max_steps, terrain_seeds=None, is_discrete=False):
     """
     评估单个个体的适应度
     
     Args:
         terrain_seeds: 如果提供，使用固定地形seeds评估；否则随机评估
+        is_discrete: 是否为离散动作空间
     
     Returns:
         avg_reward: 平均奖励
@@ -36,6 +37,8 @@ def evaluate_individual(params, network, env, max_steps, terrain_seeds=None):
             
             for step in range(max_steps):
                 action = network.predict(observation)
+                if is_discrete:
+                    action = int(np.argmax(action))  # 离散动作：选择最大值的索引
                 observation, reward, terminated, truncated, info = env.step(action)
                 episode_reward += reward
                 
@@ -54,6 +57,8 @@ def evaluate_individual(params, network, env, max_steps, terrain_seeds=None):
         
         for step in range(max_steps):
             action = network.predict(observation)
+            if is_discrete:
+                action = int(np.argmax(action))  # 离散动作：选择最大值的索引
             observation, reward, terminated, truncated, info = env.step(action)
             episode_reward += reward
             
@@ -63,7 +68,7 @@ def evaluate_individual(params, network, env, max_steps, terrain_seeds=None):
         return episode_reward, seed
 
 
-def save_video_of_best(params, network, env_name, generation, max_steps, seed=None, video_dir="videos"):
+def save_video_of_best(params, network, env_name, generation, max_steps, seed=None, video_dir="videos", is_discrete=False):
     """
     保存最优个体的视频
     
@@ -75,6 +80,7 @@ def save_video_of_best(params, network, env_name, generation, max_steps, seed=No
         max_steps: 最大步数
         seed: 环境随机种子（固定地形模式下必须提供）
         video_dir: 视频保存目录
+        is_discrete: 是否为离散动作空间
     """
     # 创建视频目录
     os.makedirs(video_dir, exist_ok=True)
@@ -104,6 +110,8 @@ def save_video_of_best(params, network, env_name, generation, max_steps, seed=No
         
         for step in range(max_steps):
             action = network.predict(observation)
+            if is_discrete:
+                action = int(np.argmax(action))  # 离散动作：选择最大值的索引
             observation, reward, terminated, truncated, info = env.step(action)
             total_reward += reward
             steps += 1
@@ -149,10 +157,25 @@ def main():
             return
     
     obs_dim = env_test.observation_space.shape[0]
-    act_dim = env_test.action_space.shape[0]
+    
+    # 检测动作空间类型
+    import gymnasium.spaces as spaces
+    if isinstance(env_test.action_space, spaces.Box):
+        # 连续动作空间
+        act_dim = env_test.action_space.shape[0]
+        is_discrete = False
+    elif isinstance(env_test.action_space, spaces.Discrete):
+        # 离散动作空间
+        act_dim = env_test.action_space.n
+        is_discrete = True
+    else:
+        print(f"✗ 不支持的动作空间类型: {type(env_test.action_space)}")
+        return
+    
     env_test.close()
     
-    print(f"观察空间: {obs_dim}维, 动作空间: {act_dim}维\n")
+    action_type = "离散" if is_discrete else "连续"
+    print(f"观察空间: {obs_dim}维, 动作空间: {act_dim}维 ({action_type})\n")
     
     # 创建神经网络
     network = NeuralNetwork(obs_dim, config.HIDDEN_LAYERS, act_dim)
@@ -207,7 +230,7 @@ def main():
         
         for i, individual in enumerate(ga.population):
             avg_fitness, eval_seed = evaluate_individual(
-                individual, network, env_train, config.MAX_STEPS, terrain_seeds
+                individual, network, env_train, config.MAX_STEPS, terrain_seeds, is_discrete
             )
             fitness_scores.append(avg_fitness)
             individual_seeds.append(eval_seed)  # 保存每个个体的seed
@@ -256,7 +279,8 @@ def main():
                 env_name, 
                 generation + 1, 
                 config.MAX_STEPS,
-                seed=video_seed  # 使用固定地形的seed
+                seed=video_seed,  # 使用固定地形的seed
+                is_discrete=is_discrete
             )
         # 定期保存视频（即使不是新记录）
         elif ((generation + 1) % config.VIDEO_FREQUENCY == 0) and best_ever_params is not None:
@@ -268,7 +292,8 @@ def main():
                 env_name, 
                 generation + 1, 
                 config.MAX_STEPS,
-                seed=video_seed
+                seed=video_seed,
+                is_discrete=is_discrete
             )
         
         # 保存检查点
@@ -311,7 +336,8 @@ def main():
         env_name, 
         config.GENERATIONS, 
         config.MAX_STEPS,
-        seed=final_seed
+        seed=final_seed,
+        is_discrete=is_discrete
     )
     
     env_train.close()

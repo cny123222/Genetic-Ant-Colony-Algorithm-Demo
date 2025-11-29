@@ -1,0 +1,27 @@
+============================================================
+当前配置
+============================================================
+环境: CartPole-v1
+种群大小: 50
+训练代数: 100
+变异率: 0.15
+交叉率: 0.8
+精英比例: 0.1
+神经网络结构: 输入 → 16 → 16 → 输出
+每集最大步数: 500
+============================================================
+
+开始时间: 2025-11-28 20:10:00
+视频保存频率: 每 999999 代
+
+初始化环境...
+✓ 成功加载 CartPole-v1
+
+
+错误: tuple index out of range
+Traceback (most recent call last):
+  File "/Users/cq123222/Desktop/25-26 Fall/生命科学导论/GA/train_with_video.py", line 327, in <module>
+    main()
+  File "/Users/cq123222/Desktop/25-26 Fall/生命科学导论/GA/train_with_video.py", line 152, in main
+    act_dim = env_test.action_space.shape[0]
+IndexError: tuple index out of range
