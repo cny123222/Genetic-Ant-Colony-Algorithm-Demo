@@ -53,9 +53,9 @@ def generate_courses(n=50):
         course = Course(f"课程{i+1:02d}", time_cost, value)
         courses.append(course)
     
-    # 时间预算：约为总时间的40%
+    # 时间预算：约为总时间的30%（更严格的约束）
     total_time = sum(c.time_cost for c in courses)
-    time_budget = int(total_time * 0.4)
+    time_budget = int(total_time * 0.3)
     
     return courses, time_budget
 
@@ -96,26 +96,32 @@ class CourseSelectionGA:
         self.best_fitness = float('-inf')
     
     def _initialize_population(self):
-        """初始化种群（随机二进制串）"""
-        # 随机生成二进制个体
-        population = np.random.randint(0, 2, size=(self.population_size, self.n_courses))
+        """初始化种群（随机策略）"""
+        population = []
         
-        # 确保至少有一些个体是可行的（不超时）
-        for i in range(min(10, self.population_size)):
-            # 贪心初始化：按性价比排序
-            value_per_time = [c.value / c.time_cost for c in self.courses]
-            sorted_indices = np.argsort(value_per_time)[::-1]
+        # 完全随机初始化
+        for i in range(self.population_size):
+            # 随机选择，期望选中概率约为 time_budget / total_time
+            total_time = sum(c.time_cost for c in self.courses)
+            select_prob = self.time_budget / total_time * 1.2  # 稍微多选一些，后面修复
             
-            individual = np.zeros(self.n_courses, dtype=int)
-            current_time = 0
-            for idx in sorted_indices:
-                if current_time + self.courses[idx].time_cost <= self.time_budget:
-                    individual[idx] = 1
-                    current_time += self.courses[idx].time_cost
+            individual = (np.random.rand(self.n_courses) < select_prob).astype(int)
             
-            population[i] = individual
+            # 轻度修复：只移除明显超时的情况
+            current_time = sum(self.courses[j].time_cost for j in range(self.n_courses) if individual[j] == 1)
+            
+            # 如果严重超时（>1.5倍），随机移除一些
+            while current_time > self.time_budget * 1.5:
+                selected = [j for j in range(self.n_courses) if individual[j] == 1]
+                if not selected:
+                    break
+                remove_idx = np.random.choice(selected)
+                individual[remove_idx] = 0
+                current_time -= self.courses[remove_idx].time_cost
+            
+            population.append(individual)
         
-        return population
+        return np.array(population)
     
     def _calculate_fitness(self, individual):
         """
@@ -138,13 +144,15 @@ class CourseSelectionGA:
                 total_time += self.courses[i].time_cost
                 total_value += self.courses[i].value
         
-        # 如果超时，施加惩罚
+        # 如果超时，施加强惩罚
         if total_time > self.time_budget:
             overtime = total_time - self.time_budget
-            penalty = overtime * 10  # 每超时1小时，惩罚10分
+            penalty = overtime * 20  # 每超时1小时，惩罚20分（加强）
             fitness = total_value - penalty
         else:
-            fitness = total_value
+            # 可行解：奖励时间利用率
+            utilization_bonus = (total_time / self.time_budget) * 5
+            fitness = total_value + utilization_bonus
         
         return fitness
     
@@ -168,20 +176,42 @@ class CourseSelectionGA:
         return self.population[winner_idx].copy()
     
     def crossover(self, parent1, parent2):
-        """单点交叉"""
+        """两点交叉（更好的基因混合）"""
         if np.random.rand() < self.crossover_rate:
-            crossover_point = np.random.randint(1, self.n_courses)
-            child1 = np.concatenate([parent1[:crossover_point], parent2[crossover_point:]])
-            child2 = np.concatenate([parent2[:crossover_point], parent1[crossover_point:]])
+            # 两点交叉：选择两个交叉点
+            point1 = np.random.randint(1, self.n_courses - 1)
+            point2 = np.random.randint(point1 + 1, self.n_courses)
+            
+            # 中间段交换
+            child1 = parent1.copy()
+            child2 = parent2.copy()
+            child1[point1:point2] = parent2[point1:point2]
+            child2[point1:point2] = parent1[point1:point2]
+            
             return child1, child2
         else:
             return parent1.copy(), parent2.copy()
     
     def mutate(self, individual):
-        """位翻转变异"""
+        """位翻转变异（轻度修复）"""
+        # 位翻转变异
         for i in range(self.n_courses):
             if np.random.rand() < self.mutation_rate:
                 individual[i] = 1 - individual[i]  # 0->1 或 1->0
+        
+        # 轻度修复：只修复严重超时的情况（>2倍预算）
+        total_time = sum(self.courses[i].time_cost for i in range(self.n_courses) if individual[i] == 1)
+        attempts = 0
+        while total_time > self.time_budget * 2 and attempts < 20:
+            selected_indices = [i for i in range(self.n_courses) if individual[i] == 1]
+            if not selected_indices:
+                break
+            # 随机移除一个选中的课程
+            remove_idx = np.random.choice(selected_indices)
+            individual[remove_idx] = 0
+            total_time -= self.courses[remove_idx].time_cost
+            attempts += 1
+        
         return individual
     
     def evolve(self):
@@ -246,45 +276,26 @@ class CourseSelectionGA:
 
 
 def visualize_results(ga, generations):
-    """可视化训练结果"""
+    """可视化训练结果（仅显示最佳适应度曲线）"""
     # 设置中文字体
     plt.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'SimHei', 'DejaVu Sans']
     plt.rcParams['axes.unicode_minus'] = False
     
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 5))
+    # 创建单个图表（增大高度）
+    fig, ax = plt.subplots(1, 1, figsize=(12, 8))
     
-    # 图1：适应度曲线
-    ax1.plot(range(1, generations + 1), ga.best_fitness_history, 
-             'b-', linewidth=2, label='最佳适应度')
-    ax1.plot(range(1, generations + 1), ga.avg_fitness_history, 
-             'r--', linewidth=1, alpha=0.7, label='平均适应度')
-    ax1.set_xlabel('代数', fontsize=12)
-    ax1.set_ylabel('适应度（总收获）', fontsize=12)
-    ax1.set_title('遗传算法训练曲线', fontsize=14, fontweight='bold')
-    ax1.legend(fontsize=10)
-    ax1.grid(True, alpha=0.3)
+    # 绘制最佳适应度曲线
+    ax.plot(range(1, generations + 1), ga.best_fitness_history, 
+            'b-', linewidth=2.5, label='最佳适应度')
     
-    # 图2：最佳方案详情
-    solution = ga.get_best_solution()
+    ax.set_xlabel('代数', fontsize=16)
+    ax.set_ylabel('适应度（总收获）', fontsize=16)
+    ax.set_title('遗传算法训练曲线', fontsize=18, fontweight='bold')
+    ax.legend(fontsize=14)
+    ax.grid(True, alpha=0.3)
     
-    # 绘制条形图
-    course_names = [c.name for c in solution['courses'][:10]]  # 只显示前10个
-    course_values = [c.value for c in solution['courses'][:10]]
-    course_times = [c.time_cost for c in solution['courses'][:10]]
-    
-    x = np.arange(len(course_names))
-    width = 0.35
-    
-    ax2.bar(x - width/2, course_values, width, label='收获（分）', alpha=0.8)
-    ax2.bar(x + width/2, course_times, width, label='时间（小时）', alpha=0.8)
-    ax2.set_xlabel('课程', fontsize=12)
-    ax2.set_ylabel('数值', fontsize=12)
-    ax2.set_title(f'选中课程详情（前10门，共{len(solution["courses"])}门）', 
-                  fontsize=14, fontweight='bold')
-    ax2.set_xticks(x)
-    ax2.set_xticklabels(course_names, rotation=45, ha='right')
-    ax2.legend(fontsize=10)
-    ax2.grid(True, alpha=0.3, axis='y')
+    # 增大刻度字体
+    ax.tick_params(axis='both', which='major', labelsize=12)
     
     plt.tight_layout()
     
@@ -327,12 +338,12 @@ def main():
     print("=" * 80)
     
     # 参数设置
-    N_COURSES = 50          # 课程数量
-    POPULATION_SIZE = 100   # 种群大小
+    N_COURSES = 200         # 课程数量（增加难度）
+    POPULATION_SIZE = 200   # 种群大小
     GENERATIONS = 200       # 进化代数
-    MUTATION_RATE = 0.01    # 变异率
-    CROSSOVER_RATE = 0.8    # 交叉率
-    ELITE_RATIO = 0.1       # 精英比例
+    MUTATION_RATE = 0.02    # 变异率
+    CROSSOVER_RATE = 0.85   # 交叉率
+    ELITE_RATIO = 0.05      # 精英比例
     
     print(f"\n配置参数：")
     print(f"  课程数量: {N_COURSES}")
@@ -349,7 +360,7 @@ def main():
     print(f"\n✅ 生成了 {len(courses)} 门课程")
     print(f"总时间: {sum(c.time_cost for c in courses)} 小时")
     print(f"总收获: {sum(c.value for c in courses)} 分")
-    print(f"时间预算: {time_budget} 小时 (约40%)")
+    print(f"时间预算: {time_budget} 小时 (约30%，更紧张的约束)")
     
     # 显示部分课程
     print("\n课程样例（前10门）：")
@@ -375,10 +386,10 @@ def main():
     for generation in range(GENERATIONS):
         ga.evolve()
         
-        if (generation + 1) % 10 == 0 or generation == 0:
-            print(f"[Gen {generation+1:3d}/{GENERATIONS}] "
-                  f"最佳: {ga.best_fitness:.0f}分 | "
-                  f"平均: {np.mean(ga.fitness_scores):.0f}分")
+        # 动态调整打印频率
+        print_freq = max(1, GENERATIONS // 20)  # 打印20次
+        if (generation + 1) % print_freq == 0 or generation == 0:
+            print(f"[Gen {generation+1:3d}/{GENERATIONS}] 最佳适应度: {ga.best_fitness:.1f}分")
     
     print(f"\n{'='*80}")
     print("优化完成！")
