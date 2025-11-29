@@ -117,6 +117,9 @@ def save_video_of_best(params, network, env_name, generation, max_steps, seed=No
             steps += 1
             
             if terminated or truncated:
+                # episode结束后，继续渲染30帧（约1秒），让用户看清倒下的过程
+                for _ in range(30):
+                    env.step(action)  # 继续执行动作（虽然已经结束）
                 break
         
         env.close()
