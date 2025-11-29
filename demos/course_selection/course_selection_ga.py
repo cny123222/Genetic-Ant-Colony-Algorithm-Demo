@@ -13,6 +13,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.font_manager import FontProperties
 from datetime import datetime
 import json
 
@@ -37,25 +38,24 @@ def generate_courses(n=50):
     
     Returns:
         courses: 课程列表
-        time_budget: 时间预算
+        time_budget: 时间预算（固定60小时）
     """
     np.random.seed(42)  # 固定随机种子，保证可复现
     
     courses = []
     for i in range(n):
-        # 时间成本：10-50小时
-        time_cost = np.random.randint(10, 51)
+        # 时间成本：2-25小时
+        time_cost = np.random.randint(2, 26)
         
-        # 收获：30-100分（大致与时间成本正相关，但有随机性）
-        base_value = time_cost * (0.8 + np.random.rand() * 0.8)  # 0.8-1.6倍
-        value = int(base_value)
+        # 收获：1-10分（与时间成本弱相关）
+        # 性价比在0.2-0.8之间，平均约0.5
+        value = np.random.randint(1, 11)
         
         course = Course(f"课程{i+1:02d}", time_cost, value)
         courses.append(course)
     
-    # 时间预算：约为总时间的15%（非常严格的约束）
-    total_time = sum(c.time_cost for c in courses)
-    time_budget = int(total_time * 0.15)
+    # 时间预算：固定60小时
+    time_budget = 60
     
     return courses, time_budget
 
@@ -101,17 +101,16 @@ class CourseSelectionGA:
         
         # 完全随机初始化
         for i in range(self.population_size):
-            # 随机选择，期望选中概率约为 time_budget / total_time
-            total_time = sum(c.time_cost for c in self.courses)
-            select_prob = self.time_budget / total_time * 1.2  # 稍微多选一些，后面修复
+            # 随机选择，期望选中约3-5门课（平均时间约10小时/门，60小时预算）
+            select_prob = 0.2  # 20%选中率
             
             individual = (np.random.rand(self.n_courses) < select_prob).astype(int)
             
-            # 轻度修复：只移除明显超时的情况
+            # 轻度修复：只移除严重超时的情况（>2倍预算）
             current_time = sum(self.courses[j].time_cost for j in range(self.n_courses) if individual[j] == 1)
             
-            # 如果严重超时（>1.5倍），随机移除一些
-            while current_time > self.time_budget * 1.5:
+            # 如果严重超时（>120小时），随机移除一些
+            while current_time > self.time_budget * 2:
                 selected = [j for j in range(self.n_courses) if individual[j] == 1]
                 if not selected:
                     break
@@ -127,8 +126,7 @@ class CourseSelectionGA:
         """
         计算个体适应度
         
-        适应度 = 总收获
-        如果超时，施加惩罚：适应度 = 总收获 - 超时惩罚
+        适应度 = 总收获 - 超时惩罚
         
         Args:
             individual: 二进制编码的个体
@@ -144,15 +142,14 @@ class CourseSelectionGA:
                 total_time += self.courses[i].time_cost
                 total_value += self.courses[i].value
         
-        # 如果超时，施加强惩罚
+        # 如果超时，施加惩罚（但不会变成0，还能比较好坏）
         if total_time > self.time_budget:
             overtime = total_time - self.time_budget
-            penalty = overtime * 20  # 每超时1小时，惩罚20分（加强）
+            penalty = overtime * 2  # 每超时1小时，惩罚2分
             fitness = total_value - penalty
         else:
-            # 可行解：奖励时间利用率
-            utilization_bonus = (total_time / self.time_budget) * 5
-            fitness = total_value + utilization_bonus
+            # 可行解：总收获就是适应度
+            fitness = total_value
         
         return fitness
     
@@ -193,25 +190,13 @@ class CourseSelectionGA:
             return parent1.copy(), parent2.copy()
     
     def mutate(self, individual):
-        """位翻转变异（轻度修复）"""
+        """位翻转变异（无修复，依靠适应度淘汰）"""
         # 位翻转变异
         for i in range(self.n_courses):
             if np.random.rand() < self.mutation_rate:
                 individual[i] = 1 - individual[i]  # 0->1 或 1->0
         
-        # 轻度修复：只修复严重超时的情况（>2倍预算）
-        total_time = sum(self.courses[i].time_cost for i in range(self.n_courses) if individual[i] == 1)
-        attempts = 0
-        while total_time > self.time_budget * 2 and attempts < 20:
-            selected_indices = [i for i in range(self.n_courses) if individual[i] == 1]
-            if not selected_indices:
-                break
-            # 随机移除一个选中的课程
-            remove_idx = np.random.choice(selected_indices)
-            individual[remove_idx] = 0
-            total_time -= self.courses[remove_idx].time_cost
-            attempts += 1
-        
+        # 不修复超时，让适应度函数（0分）自然淘汰
         return individual
     
     def evolve(self):
@@ -277,9 +262,10 @@ class CourseSelectionGA:
 
 def visualize_results(ga, generations):
     """可视化训练结果（仅显示最佳适应度曲线）"""
-    # 设置中文字体
-    plt.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'SimHei', 'DejaVu Sans']
-    plt.rcParams['axes.unicode_minus'] = False
+    # 设置字体
+    font_en = FontProperties(fname="/System/Library/Fonts/Supplemental/Times New Roman.ttf", size=20)
+    font_cn = FontProperties(fname="/System/Library/Fonts/Supplemental/Songti.ttc", size=22)
+    font_cn_legend = FontProperties(fname="/System/Library/Fonts/Supplemental/Songti.ttc", size=18)
     
     # 创建单个图表（增大高度）
     fig, ax = plt.subplots(1, 1, figsize=(12, 8))
@@ -288,13 +274,19 @@ def visualize_results(ga, generations):
     ax.plot(range(1, generations + 1), ga.best_fitness_history, 
             'b-', linewidth=2.5, label='最佳适应度')
     
-    ax.set_xlabel('代数', fontsize=16)
-    ax.set_ylabel('适应度（总收获）', fontsize=16)
-    ax.legend(fontsize=14)
+    # 设置标签（使用中文字体）
+    ax.set_xlabel('代数', fontproperties=font_cn, fontsize=22)
+    ax.set_ylabel('适应度（总收获）', fontproperties=font_cn, fontsize=22)
+    
+    # 设置图例（使用中文字体，右下角）
+    legend = ax.legend(loc='lower right', prop=font_cn_legend)
+    
     ax.grid(True, alpha=0.3)
     
-    # 增大刻度字体
-    ax.tick_params(axis='both', which='major', labelsize=12)
+    # 增大刻度字体（使用英文字体）
+    ax.tick_params(axis='both', which='major', labelsize=20)
+    for label in ax.get_xticklabels() + ax.get_yticklabels():
+        label.set_fontproperties(font_en)
     
     plt.tight_layout()
     
@@ -339,7 +331,7 @@ def main():
     # 参数设置
     N_COURSES = 200         # 课程数量
     POPULATION_SIZE = 200   # 种群大小
-    GENERATIONS = 1000      # 进化代数
+    GENERATIONS = 300       # 进化代数
     MUTATION_RATE = 0.02    # 变异率
     CROSSOVER_RATE = 0.85   # 交叉率
     ELITE_RATIO = 0.05      # 精英比例
@@ -359,7 +351,7 @@ def main():
     print(f"\n✅ 生成了 {len(courses)} 门课程")
     print(f"总时间: {sum(c.time_cost for c in courses)} 小时")
     print(f"总收获: {sum(c.value for c in courses)} 分")
-    print(f"时间预算: {time_budget} 小时 (约15%，非常严格的约束⚠️)")
+    print(f"时间预算: {time_budget} 小时（固定）")
     
     # 显示部分课程
     print("\n课程样例（前10门）：")
