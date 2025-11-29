@@ -50,7 +50,7 @@ def evaluate_individual(params, network, env, max_steps, terrain_seeds=None, is_
         # 返回平均奖励和第一个seed（固定地形时用于录视频）
         return np.mean(episode_rewards), terrain_seeds[0]
     else:
-        # 随机地形模式（兼容旧代码）
+        # 随机地形模式：单次评估（视频会使用这个seed重现）
         seed = np.random.randint(0, 1000000)
         observation, info = env.reset(seed=seed)
         episode_reward = 0.0

@@ -25,7 +25,7 @@ MAX_STEPS = 500             # CartPole最大步数
 RANDOM_SEED = None          # 随机种子（None=随机，提高成功率）
 USE_FIXED_TERRAIN = False   # CartPole不需要
 TERRAIN_SEEDS = None        # CartPole不需要
-EVAL_EPISODES = 1           # 单次评估
+EVAL_EPISODES = 1           # 单次评估（视频使用评估时的同一seed）
 RENDER_BEST = False         # 是否渲染最佳个体（改为False加快训练）
 RENDER_FREQUENCY = 1        # 每隔几代渲染一次（设为1表示每代都渲染）
 SAVE_FREQUENCY = 50         # 每隔50代保存一次模型
