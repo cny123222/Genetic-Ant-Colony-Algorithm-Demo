@@ -6,13 +6,10 @@
 import gymnasium as gym
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.font_manager import FontProperties
 from neural_network import load_network
 import sys
 import os
-
-# 配置matplotlib以支持中文显示
-plt.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'SimHei', 'DejaVu Sans']
-plt.rcParams['axes.unicode_minus'] = False  # 解决负号显示问题
 
 
 def visualize_model(model_path="best_model.npy", num_episodes=5, max_steps=1000):
@@ -137,37 +134,38 @@ def plot_training_stats(stats_path="training_stats.npy"):
     mean_fitness = stats['mean_fitness']
     std_fitness = stats['std_fitness']
     
-    # 创建图表
-    plt.figure(figsize=(12, 6))
+    # 设置字体
+    font_en = FontProperties(fname="/System/Library/Fonts/Supplemental/Times New Roman.ttf", size=16)
+    font_cn = FontProperties(fname="/System/Library/Fonts/Supplemental/Songti.ttc", size=18)
+    font_cn_legend = FontProperties(fname="/System/Library/Fonts/Supplemental/Songti.ttc", size=14)
+    
+    # 创建图表（只保留一个图）
+    plt.figure(figsize=(10, 6))
     
     # 绘制适应度曲线
-    plt.subplot(1, 2, 1)
-    plt.plot(generations, best_fitness, 'b-', label='Best Fitness', linewidth=2)
-    plt.plot(generations, mean_fitness, 'g--', label='Mean Fitness', linewidth=1.5)
+    plt.plot(generations, best_fitness, 'b-', label='最佳适应度', linewidth=2)
+    plt.plot(generations, mean_fitness, 'g--', label='平均适应度', linewidth=1.5)
     plt.fill_between(
         generations,
         np.array(mean_fitness) - np.array(std_fitness),
         np.array(mean_fitness) + np.array(std_fitness),
         alpha=0.3,
         color='green',
-        label='Std Range'
+        label='标准差范围'
     )
-    plt.xlabel('Generation', fontsize=12)
-    plt.ylabel('Fitness', fontsize=12)
-    plt.title('Training Progress - Fitness Curve', fontsize=14, fontweight='bold')
-    plt.legend()
+    plt.xlabel('代数', fontproperties=font_cn, fontsize=18)
+    plt.ylabel('适应度', fontproperties=font_cn, fontsize=18)
+    plt.legend(prop=font_cn_legend)
     plt.grid(True, alpha=0.3)
     
-    # 绘制改进速度
-    plt.subplot(1, 2, 2)
-    if len(best_fitness) > 1:
-        improvement = np.diff(best_fitness)
-        plt.plot(generations[1:], improvement, 'r-', linewidth=1.5)
-        plt.axhline(y=0, color='k', linestyle='--', alpha=0.3)
-        plt.xlabel('Generation', fontsize=12)
-        plt.ylabel('Fitness Improvement', fontsize=12)
-        plt.title('Fitness Improvement per Generation', fontsize=14, fontweight='bold')
-        plt.grid(True, alpha=0.3)
+    # 设置刻度字体
+    ax = plt.gca()
+    ax.tick_params(axis='both', which='major', labelsize=16)
+    for label in ax.get_xticklabels() + ax.get_yticklabels():
+        label.set_fontproperties(font_en)
+    
+    # 设置横坐标范围为0到100
+    plt.xlim(0, 100)
     
     plt.tight_layout()
     
