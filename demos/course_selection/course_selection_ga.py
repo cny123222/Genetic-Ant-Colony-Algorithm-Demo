@@ -377,9 +377,8 @@ def main():
     for generation in range(GENERATIONS):
         ga.evolve()
         
-        # 每50代打印一次，初始也打印
-        if (generation + 1) % 50 == 0 or generation == 0:
-            print(f"[Gen {generation+1:3d}/{GENERATIONS}] 最佳适应度: {ga.best_fitness:.1f}分")
+        # 每一代都打印
+        print(f"[Gen {generation+1:3d}/{GENERATIONS}] 最佳适应度: {ga.best_fitness:.1f}分")
     
     print(f"\n{'='*80}")
     print("优化完成！")
