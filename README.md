@@ -1,4 +1,6 @@
-# 遗传算法演示项目
+# Genetic-Ant-Colony-Algorithm-Demo
+
+遗传算法与蚁群算法演示项目
 
 ## 项目结构
 
@@ -6,10 +8,11 @@
 demos/
 ├── cartpole/           # CartPole平衡问题演示
 ├── course_selection/   # 选课问题（0-1背包）演示
+├── ant_colony/         # 蚁群算法TSP演示
 └── walker_attempts/    # BipedalWalker训练记录（参考）
 ```
 
-## 三个演示
+## 演示说明
 
 ### 1. CartPole 平衡问题
 - **位置**: `demos/cartpole/`
@@ -25,7 +28,12 @@ demos/
 - **运行**: `python demos/course_selection/course_selection_ga.py`
 - **特点**: 1000代进化，清晰的优化曲线
 
-### 3. Walker训练记录
+### 3. 蚁群算法（TSP）
+- **位置**: `demos/ant_colony/`
+- **问题**: 旅行商问题
+- **运行**: `python demos/ant_colony/ANT_COLONY_TSP.py`
+
+### 4. Walker训练记录
 - **位置**: `demos/walker_attempts/`
 - **说明**: BipedalWalker训练尝试记录（参考用）
 
@@ -56,3 +64,6 @@ pip install -r requirements.txt
 - matplotlib
 - mujoco (可选，用于3D环境)
 
+## License
+
+MIT License
