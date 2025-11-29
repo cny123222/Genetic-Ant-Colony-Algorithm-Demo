@@ -290,7 +290,6 @@ def visualize_results(ga, generations):
     
     ax.set_xlabel('代数', fontsize=16)
     ax.set_ylabel('适应度（总收获）', fontsize=16)
-    ax.set_title('遗传算法训练曲线', fontsize=18, fontweight='bold')
     ax.legend(fontsize=14)
     ax.grid(True, alpha=0.3)
     
@@ -340,7 +339,7 @@ def main():
     # 参数设置
     N_COURSES = 200         # 课程数量
     POPULATION_SIZE = 200   # 种群大小
-    GENERATIONS = 500       # 进化代数
+    GENERATIONS = 1000      # 进化代数
     MUTATION_RATE = 0.02    # 变异率
     CROSSOVER_RATE = 0.85   # 交叉率
     ELITE_RATIO = 0.05      # 精英比例
