@@ -68,8 +68,8 @@ def visualize_training(log_file_path, output_path='walker_training_progress.png'
     # Plot std range (green shaded area)
     ax.fill_between(
         generations,
-        mean_fitness - std_fitness,
-        mean_fitness + std_fitness,
+        np.array(mean_fitness) - np.array(std_fitness),
+        np.array(mean_fitness) + np.array(std_fitness),
         alpha=0.3,
         color='green',
         label='标准差范围'
@@ -79,21 +79,21 @@ def visualize_training(log_file_path, output_path='walker_training_progress.png'
     ax.set_xlabel('代数', fontproperties=font_cn, fontsize=18)
     ax.set_ylabel('适应度', fontproperties=font_cn, fontsize=18)
     
-    # Set axis limits
-    ax.set_xlim(0, max_gen)
+    # Set legend (matching CartPole - no loc specified, auto-positioning)
+    ax.legend(prop=font_cn_legend)
     
-    # Increase tick label font size
-    ax.tick_params(axis='both', which='major', labelsize=16)
+    # Add grid (matching CartPole)
+    ax.grid(True, alpha=0.3)
     
     # Set tick label fonts (matching CartPole)
     for label in ax.get_xticklabels() + ax.get_yticklabels():
         label.set_fontproperties(font_en)
     
-    # Add legend in lower right (matching CartPole)
-    ax.legend(loc='lower right', prop=font_cn_legend)
+    # Set axis limits
+    ax.set_xlim(0, max_gen)
     
-    # Add grid for better readability
-    ax.grid(True, alpha=0.3, linestyle='--')
+    # Increase tick label font size
+    ax.tick_params(axis='both', which='major', labelsize=16)
     
     plt.tight_layout()
     plt.savefig(output_path, dpi=300, bbox_inches='tight')
