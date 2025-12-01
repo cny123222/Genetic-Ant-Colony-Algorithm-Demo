@@ -9,23 +9,13 @@ import re
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Set up better fonts
-plt.rcParams['font.family'] = 'serif'
-plt.rcParams['font.serif'] = ['Times New Roman', 'DejaVu Serif']
-plt.rcParams['mathtext.fontset'] = 'stix'
-
-# Chinese font for labels
+# Set up fonts exactly like CartPole
 from matplotlib.font_manager import FontProperties
-chinese_font = None
-for font_name in ['Arial Unicode MS', 'SimHei', 'Songti SC', 'STSong']:
-    try:
-        chinese_font = FontProperties(fname=None, family=font_name)
-        break
-    except:
-        continue
 
-if chinese_font is None:
-    chinese_font = FontProperties()
+# Font settings matching CartPole style
+font_en = FontProperties(fname="/System/Library/Fonts/Supplemental/Times New Roman.ttf", size=16)
+font_cn = FontProperties(fname="/System/Library/Fonts/Supplemental/Songti.ttc", size=18)
+font_cn_legend = FontProperties(fname="/System/Library/Fonts/Supplemental/Songti.ttc", size=14)
 
 def parse_log_file(log_file_path, max_gen=600):
     """Parse training log file and extract best fitness, mean fitness, and std per generation"""
@@ -85,9 +75,9 @@ def visualize_training(log_file_path, output_path='walker_training_progress.png'
         label='标准差范围'
     )
     
-    # Set labels with larger font
-    ax.set_xlabel('代数', fontproperties=chinese_font, fontsize=18)
-    ax.set_ylabel('适应度', fontproperties=chinese_font, fontsize=18)
+    # Set labels with larger font (matching CartPole)
+    ax.set_xlabel('代数', fontproperties=font_cn, fontsize=18)
+    ax.set_ylabel('适应度', fontproperties=font_cn, fontsize=18)
     
     # Set axis limits
     ax.set_xlim(0, max_gen)
@@ -95,8 +85,12 @@ def visualize_training(log_file_path, output_path='walker_training_progress.png'
     # Increase tick label font size
     ax.tick_params(axis='both', which='major', labelsize=16)
     
-    # Add legend in lower right
-    ax.legend(loc='lower right', fontsize=14, prop=chinese_font)
+    # Set tick label fonts (matching CartPole)
+    for label in ax.get_xticklabels() + ax.get_yticklabels():
+        label.set_fontproperties(font_en)
+    
+    # Add legend in lower right (matching CartPole)
+    ax.legend(loc='lower right', prop=font_cn_legend)
     
     # Add grid for better readability
     ax.grid(True, alpha=0.3, linestyle='--')
