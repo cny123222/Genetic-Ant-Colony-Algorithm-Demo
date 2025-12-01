@@ -28,34 +28,36 @@ if chinese_font is None:
     chinese_font = FontProperties()
 
 def parse_log_file(log_file_path, max_gen=600):
-    """Parse training log file and extract best fitness per generation"""
+    """Parse training log file and extract best fitness, mean fitness, and std per generation"""
     generations = []
     best_fitness = []
+    mean_fitness = []
+    std_fitness = []
     
     with open(log_file_path, 'r', encoding='utf-8') as f:
         content = f.read()
     
-    # Pattern to match generation lines
-    # Example: [Gen 1/1000] ... Best: -91.19, ...
-    # or: [Gen 2/1000] ... NEW RECORD! Best: -37.86, ...
-    pattern = r'\[Gen (\d+)/\d+\].*?Best: ([-\d.]+),'
+    # Pattern to match generation lines with Best, Mean, and Std
+    # Example: [Gen 1/600] ... Best: -91.19, Mean: -92.35, Std: 1.79 ...
+    pattern = r'\[Gen (\d+)/\d+\].*?Best: ([-\d.]+), Mean: ([-\d.]+), Std: ([-\d.]+)'
     
     matches = re.findall(pattern, content)
     
-    for gen_str, fitness_str in matches:
+    for gen_str, best_str, mean_str, std_str in matches:
         gen = int(gen_str)
-        fitness = float(fitness_str)
         if gen <= max_gen:
             generations.append(gen)
-            best_fitness.append(fitness)
+            best_fitness.append(float(best_str))
+            mean_fitness.append(float(mean_str))
+            std_fitness.append(float(std_str))
     
-    return np.array(generations), np.array(best_fitness)
+    return np.array(generations), np.array(best_fitness), np.array(mean_fitness), np.array(std_fitness)
 
 def visualize_training(log_file_path, output_path='walker_training_progress.png', max_gen=600):
-    """Create training progress visualization"""
+    """Create training progress visualization (matching CartPole style)"""
     
     # Parse log file
-    generations, best_fitness = parse_log_file(log_file_path, max_gen)
+    generations, best_fitness, mean_fitness, std_fitness = parse_log_file(log_file_path, max_gen)
     
     if len(generations) == 0:
         print("No training data found in log file!")
@@ -67,11 +69,24 @@ def visualize_training(log_file_path, output_path='walker_training_progress.png'
     # Create figure
     fig, ax = plt.subplots(figsize=(10, 6))
     
-    # Plot best fitness
-    ax.plot(generations, best_fitness, linewidth=2, color='#2E86AB', label='最佳适应度')
+    # Plot best fitness (blue line)
+    ax.plot(generations, best_fitness, 'b-', label='最佳适应度', linewidth=2)
+    
+    # Plot mean fitness (green dashed line)
+    ax.plot(generations, mean_fitness, 'g--', label='平均适应度', linewidth=1.5)
+    
+    # Plot std range (green shaded area)
+    ax.fill_between(
+        generations,
+        mean_fitness - std_fitness,
+        mean_fitness + std_fitness,
+        alpha=0.3,
+        color='green',
+        label='标准差范围'
+    )
     
     # Set labels with larger font
-    ax.set_xlabel('世代', fontproperties=chinese_font, fontsize=18)
+    ax.set_xlabel('代数', fontproperties=chinese_font, fontsize=18)
     ax.set_ylabel('适应度', fontproperties=chinese_font, fontsize=18)
     
     # Set axis limits
@@ -93,12 +108,14 @@ def visualize_training(log_file_path, output_path='walker_training_progress.png'
     plt.close()
 
 if __name__ == "__main__":
-    log_file = "training_round10_final_1000gen_20251127_231948.txt"
+    log_file = "training_round7_r4params_600gen_20251127_145807.txt"
     output_file = "walker_training_progress.png"
     
     print("=" * 60)
     print("BipedalWalker Training Progress Visualization")
     print("=" * 60)
+    print("Using Round 7 data (Best fitness: 173.26)")
+    print()
     
     visualize_training(log_file, output_file, max_gen=600)
     
